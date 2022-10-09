@@ -119,6 +119,7 @@ df_freq_pub
 ```
 
 | --- | ABSOLUTA | RELATIVA | PERCENTUAL_RELATIVA |
+<<<<<<< HEAD
 | --- |  --- | --- | --- |
 | 18 anos | 	1446 | 	0.4883 | 	48.83 | 
 | 17 anos | 	1020	 | 0.3445 | 	34.45 | 
@@ -134,6 +135,23 @@ df_freq_pub
 | 25 anos | 	3	0.001 | 0 | 	0.10 | 
 | Entre 36 e 40 anos | 	3 | 	0.0010 | 	0.10 | 
 | Entre 51 e 55 anos | 	1 | 	0.0003 | 	0.03 | 
+=======
+| --- |  --- | --- | --- |  
+ | 18 anos | 	1446 | 	0.4883 | 	48.83 | 
+ | 17 anos | 	1020	 | 0.3445 | 	34.45 | 
+ | 19 anos | 	306	 | 0.1033 | 	10.33 | 
+ | 20 anos | 	76	 | 0.0257 | 	2.57 | 
+ | Menor de 17 anos | 	59	0.0199 | 	1.99 | 
+ | 21 anos | 	19	0.0064 | 	0.64 | 
+ | 22 anos | 	9	0.0030 | 	0.30 | 
+ | Entre 31 e 35 anos | 	6	0.0020 | 	0.20 | 
+ | 23 anos | 	5	0.0017	0.17 | 
+ | 24 anos | 	4	0.0014	0.14 | 
+ | Entre 26 e 30 anos | 	4	0.0014 | 	0.14 | 
+ | 25 anos | 	3	0.001 | 0	0.10 | 
+ | Entre 36 e 40 anos | 	3	0.0010 | 	0.10 | 
+ | Entre 51 e 55 anos | 	1	0.0003 | 	0.03 | 
+>>>>>>> c6a0b1cd11c1f13e68a2a05e78ab8c2dad030f46
 
 Percebemos que a maior parte dos valores para as escolas públicas está concetrada entre as faixas de 17 a 20 anos
 
