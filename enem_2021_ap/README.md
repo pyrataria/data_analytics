@@ -234,6 +234,8 @@ graph_freq_notas = px.histogram(df_estudo, x="NOTA_FINAL", height=700,
 graph_freq_notas.update_layout(bargap=0)
 ```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_freq_notas.png)
+
 Percebemos que as notas das escolas públicas estão distribuidas assimétricamente à direita, enquanto que, as de escolas particulares, encontram-se mais uniformemente distribuídas. Ou seja, para as escolas públicas, quando o valor da nota aumenta, o número de ocorrências diminui.
 
 **Faixas Etárias:**  
@@ -244,10 +246,14 @@ fx_eta_pub = px.bar(df_freq_pub, x="ABSOLUTA", text_auto=True)
 fx_eta_pub.show()
 ```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/fx_eta_pub.png)
+
 ```python
 fx_eta_priv = px.bar(df_freq_priv, x="ABSOLUTA", text_auto=True)
 fx_eta_priv.show()
 ```
+
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/fx_eta_priv.png)
 
 A variabilidade de participantes vestibulandos em diferentes faixa etárias de escolas públicas é maior, em relação às escolas privadas. Além disso, tanto para escolas públicas, quanto para privadas, a maior ocorrência foram de alunos entre 18 e 17 anos.
 
@@ -387,6 +393,8 @@ outliers_notas = px.box(data_frame=df_estudo, y="NOTA_FINAL",
                         width=500, height=600, color="TP_ESCOLA")
 outliers_notas.show()
 ```
+
+![]()
 
 Há diversas ocorrências de dados discrepantes para as escolas públicas, enquanto que, para escolas privadas, o mesmo não acontece. Com isso, subentende-se que, as notas das escolas privadas encontram certa consistência entre si.
 
@@ -536,7 +544,10 @@ graph_q001.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q001.update_layout(title_text=quest["Q001"])
 graph_q001.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q001.png)
 
+```python
 q002_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q002"].value_counts()
 label_pub = q002_pub.index
 value_pub = q002_pub.values
@@ -554,7 +565,11 @@ graph_q002.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q002.update_layout(title_text=quest["Q002"])
 graph_q002.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q002.png)
+
+```python
 q005_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q005"].value_counts()
 label_pub = q005_pub.index
 value_pub = q005_pub.values
@@ -572,7 +587,11 @@ graph_q005.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q005.update_layout(title_text=quest["Q005"])
 graph_q005.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q005.png)
+
+```python
 q006_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q006"].value_counts()
 label_pub = q006_pub.index
 value_pub = q006_pub.values
@@ -590,7 +609,11 @@ graph_q006.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q006.update_layout(title_text=quest["Q006"])
 graph_q006.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q006.png)
+
+```python
 q008_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q008"].value_counts()
 label_pub = q008_pub.index
 value_pub = q008_pub.values
@@ -608,7 +631,11 @@ graph_q008.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q008.update_layout(title_text=quest["Q008"])
 graph_q008.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q008.png)
+
+```python
 q009_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q009"].value_counts()
 label_pub = q009_pub.index
 value_pub = q009_pub.values
@@ -626,7 +653,11 @@ graph_q009.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q009.update_layout(title_text=quest["Q009"])
 graph_q009.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q009.png)
+
+```python
 q012_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q012"].value_counts()
 label_pub = q012_pub.index
 value_pub = q012_pub.values
@@ -644,7 +675,11 @@ graph_q012.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q012.update_layout(title_text=quest["Q012"])
 graph_q012.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q012.png)
+
+```python
 q014_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q014"].value_counts()
 label_pub = q014_pub.index
 value_pub = q014_pub.values
@@ -662,7 +697,11 @@ graph_q014.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q014.update_layout(title_text=quest["Q014"])
 graph_q014.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q014.png)
+
+```python
 q019_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q019"].value_counts()
 label_pub = q019_pub.index
 value_pub = q019_pub.values
@@ -680,7 +719,11 @@ graph_q019.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q019.update_layout(title_text=quest["Q019"])
 graph_q019.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q019.png)
+
+```python
 q022_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q022"].value_counts()
 label_pub = q022_pub.index
 value_pub = q022_pub.values
@@ -698,7 +741,11 @@ graph_q022.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q022.update_layout(title_text=quest["Q022"])
 graph_q022.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q022.png)
+
+```python
 q024_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q024"].value_counts()
 label_pub = q024_pub.index
 value_pub = q024_pub.values
@@ -716,7 +763,11 @@ graph_q024.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q024.update_layout(title_text=quest["Q024"])
 graph_q024.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q024.png)
+
+```python
 q025_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q025"].value_counts()
 label_pub = q025_pub.index
 value_pub = q025_pub.values
@@ -735,3 +786,5 @@ graph_q025.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 graph_q025.update_layout(title_text=quest["Q025"])
 graph_q025.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
 ```
+
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q025.png)
