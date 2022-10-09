@@ -233,6 +233,7 @@ graph_freq_notas = px.histogram(df_estudo, x="NOTA_FINAL", height=700,
                                 barmode="group", color="TP_ESCOLA")
 graph_freq_notas.update_layout(bargap=0)
 ```
+> [Interativa](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_freq_notas.html)
 
 ![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_freq_notas.png)
 
@@ -255,7 +256,8 @@ fx_eta_priv.show()
 
 ![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/fx_eta_priv.png)
 
-A variabilidade de participantes vestibulandos em diferentes faixa etárias de escolas públicas é maior, em relação às escolas privadas. Além disso, tanto para escolas públicas, quanto para privadas, a maior ocorrência foram de alunos entre 18 e 17 anos.
+A variabilidade de participantes vestibulandos em diferentes faixa etárias de escolas públicas é maior, em relação às escolas privadas.  
+Além disso, tanto para escolas públicas, quanto para privadas, a maior ocorrência foram de alunos entre 18 e 17 anos.
 
 ## Medidas de Tendência Central  
 Média, moda e mediana das notas de escolas públicas e privadas.
