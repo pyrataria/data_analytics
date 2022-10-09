@@ -120,7 +120,9 @@ df_estudo.FAIXA_ETARIA = df_estudo.FAIXA_ETARIA.replace(
 )
 
 df_estudo.head()
+```
 
+```python
 df_estudo.shape
 ```
 
