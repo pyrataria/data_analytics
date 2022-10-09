@@ -38,39 +38,39 @@ df[["NOTA_CN",	"NOTA_CH",	"NOTA_LC",	"NOTA_MT", "NOTA_REDACAO", "TP_ESCOLA",
     "Q022",	"Q023",	"Q024",	"Q025"]].isnull().sum()
 ```
 
-> NOTA_CN         0
-> NOTA_CH         0
-> NOTA_LC         0
-> NOTA_MT         0
-> NOTA_REDACAO    0
-> TP_ESCOLA       0
-> FAIXA_ETARIA    0
-> Q001            0
-> Q002            0
-> Q003            0
-> Q004            0
-> Q005            0
-> Q006            0
-> Q007            0
-> Q008            0
-> Q009            0
-> Q010            0
-> Q011            0
-> Q012            0
-> Q013            0
-> Q014            0
-> Q015            0
-> Q016            0
-> Q017            0
-> Q018            0
-> Q019            0
-> Q020            0
-> Q021            0
-> Q022            0
-> Q023            0
-> Q024            0
-> Q025            0
-> dtype: int64
+> NOTA_CN      |  0  
+> NOTA_CH      |  0  
+> NOTA_LC      |  0  
+> NOTA_MT      |  0  
+> NOTA_REDACAO |  0  
+> TP_ESCOLA    |  0  
+> FAIXA_ETARIA |  0  
+> Q001         |  0  
+> Q002         |  0  
+> Q003         |  0  
+> Q004         |  0  
+> Q005         |  0  
+> Q006   |  0  
+> Q007   |  0  
+> Q008   |  0  
+> Q009   |  0  
+> Q010   |  0  
+> Q011   |  0  
+> Q012   |  0  
+> Q013   |  0  
+> Q014   |  0  
+> Q015   |  0  
+> Q016   |  0  
+> Q017   |  0  
+> Q018   |  0  
+> Q019   |  0  
+> Q020   |  0  
+> Q021   |  0  
+> Q022   |  0  
+> Q023   |  0  
+> Q024   |  0  
+> Q025   |  0  
+> dtype: int64  
 
 Não há valores nulos para as principais variáveis em estudo.
 
@@ -82,10 +82,10 @@ A população de estudo será dividida em dois grupos de vestibulandos por tipo 
 ```python
 df.TP_ESCOLA.value_counts()
 ```
-> nao_respondeu    7581
-> publica          2961
-> privada           478
-> Name: TP_ESCOLA, dtype: int64
+> nao_respondeu    7581  
+> publica          2961  
+> privada           478  
+> Name: TP_ESCOLA, dtype: int64  
 
 ```python
 esc_invalida = df[df.TP_ESCOLA == "nao_respondeu"].index
@@ -129,9 +129,9 @@ df_estudo.shape
 ```python
 df_estudo.TP_ESCOLA.value_counts()
 ```
-> publica    2961
-> privada     478
-> Name: TP_ESCOLA, dtype: int64
+> publica    2961  
+> privada     478  
+> Name: TP_ESCOLA, dtype: int64  
 
 
 O total de vestibulandos de escolas públicas e privadas é de 3439. Desses, 2961 matriculados em escolas públicas e 478 em escolas privadas.
@@ -238,9 +238,13 @@ Percebemos que as notas das escolas públicas estão distribuidas assimétricame
 Frequência de faixas etárias dos vestibulandos que fizeram a prova do ENEM 2021.
 
 ```python
-px.bar(df_freq_pub, x="ABSOLUTA", text_auto=True)
+fx_eta_pub = px.bar(df_freq_pub, x="ABSOLUTA", text_auto=True)
+fx_eta_pub.show()
+```
 
-px.bar(df_freq_priv, x="ABSOLUTA", text_auto=True)
+```python
+fx_eta_priv = px.bar(df_freq_priv, x="ABSOLUTA", text_auto=True)
+fx_eta_priv.show()
 ```
 
 A variabilidade de participantes vestibulandos em diferentes faixa etárias de escolas públicas é maior, em relação às escolas privadas. Além disso, tanto para escolas públicas, quanto para privadas, a maior ocorrência foram de alunos entre 18 e 17 anos.
@@ -333,10 +337,10 @@ df_disp_var = pd.DataFrame(data_disp_var, index=["ESCOLA_PUBLICA", "ESCOLA_PRIVA
 df_disp_var
 ```
 
-| --- AMPLITUDE| --- | DESVIO_PADRAO | VARIANCIA | DESVIO_ABS_MEDIO |
-| --- |  --- | --- | --- |
-| --- ESCOLA_PUBLICA| --- | 452.0 | 61.02 | 3722.66 | 48.43 |
-| --- ESCOLA_PRIVADA| --- | 377.9 | 80.59 | 6481.31 | 65.79 |
+| --- | AMPLITUDE | DESVIO_PADRAO | VARIANCIA | DESVIO_ABS_MEDIO |
+| --- |  --- | --- | --- | --- |
+| ESCOLA_PUBLICA | 452.0 | 61.02 | 3722.66 | 48.43 |
+| ESCOLA_PRIVADA | 377.9 | 80.59 | 6481.31 | 65.79 |
 
 Olhando para o desvio padrão, percebemos que as notas das escolas privadas estão melhores distribuídas em torno da média. Além disso, a variância nos mostra que os dados das escola públicas estão mais condensados ao valor central.
 
@@ -369,16 +373,17 @@ data_med_pos = {
 df_med_pos = pd.DataFrame(data_med_pos, index=["ESCOLA_PUBLICA", "ESCOLA_PRIVADA"])
 df_med_pos
 ```
-| Q1 | Q2 | Q3 | Q4 | IQR |
-| --- | --- | --- | --- |
+| --- | Q1 | Q2 | Q3 | Q4 | IQR |
+| --- | --- | --- | --- | --- | --- |
 | ESCOLA_PUBLICA | 443.60 | 479.70 | 524.700 | 778.14 | 81.100 |
 | ESCOLA_PRIVADA | 520.06 | 572.73 | 636.495 | 775.64 | 116.435 |
 
 ### Outliers
 
 ```python
-px.box(data_frame=df_estudo, y="NOTA_FINAL", width=500, height=600,
-       color="TP_ESCOLA")
+outliers_notas = px.box(data_frame=df_estudo, y="NOTA_FINAL",
+                        width=500, height=600, color="TP_ESCOLA")
+outliers_notas.show()
 ```
 
 Há diversas ocorrências de dados discrepantes para as escolas públicas, enquanto que, para escolas privadas, o mesmo não acontece. Com isso, subentende-se que, as notas das escolas privadas encontram certa consistência entre si.
@@ -496,17 +501,17 @@ df_plot.Q025 = df_plot.Q025.replace(
 df_plot.head()
 
 quest = {"Q001": "Até que série seu pai, ou o homem responsável por você, estudou?",
- "Q002": "Até que série sua mãe, ou a mulher responsável por você, estudou?",
- "Q005": "Incluindo você, quantas pessoas moram atualmente em sua residência?",
- "Q006": "Qual é a renda mensal de sua família? (Some a sua renda com a dos seus familiares.)",
- "Q008": "Na sua residência tem banheiro?",
- "Q009": "Na sua residência tem quartos para dormir?",
- "Q012": "Na sua residência tem geladeira?",
- "Q014": "Na sua residência tem máquina de lavar roupa? (o tanquinho NÃO deve ser considerado)",
- "Q019": "Na sua residência tem televisão em cores?",
- "Q022": "Na sua residência tem telefone celular?",
- "Q024": "Na sua residência tem computador?",
- "Q025": "Na sua residência tem acesso à Internet?"}
+         "Q002": "Até que série sua mãe, ou a mulher responsável por você, estudou?",
+         "Q005": "Incluindo você, quantas pessoas moram atualmente em sua residência?",
+         "Q006": "Qual é a renda mensal de sua família? (Some a sua renda com a dos seus familiares.)",
+         "Q008": "Na sua residência tem banheiro?",
+         "Q009": "Na sua residência tem quartos para dormir?",
+         "Q012": "Na sua residência tem geladeira?",
+         "Q014": "Na sua residência tem máquina de lavar roupa? (o tanquinho NÃO deve ser considerado)",
+         "Q019": "Na sua residência tem televisão em cores?",
+         "Q022": "Na sua residência tem telefone celular?",
+         "Q024": "Na sua residência tem computador?",
+         "Q025": "Na sua residência tem acesso à Internet?"}
 ```
 
 Visualização gráfica entre questionários dos alunos de escolas públicas e privadas.
