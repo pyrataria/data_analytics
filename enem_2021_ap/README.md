@@ -374,7 +374,7 @@ df_med_pos = pd.DataFrame(data_med_pos, index=["ESCOLA_PUBLICA", "ESCOLA_PRIVADA
 df_med_pos
 ```
 | Q1 | Q2 | Q3 | Q4 | IQR |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | ESCOLA_PUBLICA | 443.60 | 479.70 | 524.700 | 778.14 | 81.100 |
 | ESCOLA_PRIVADA | 520.06 | 572.73 | 636.495 | 775.64 | 116.435 |
 
