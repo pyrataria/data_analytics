@@ -350,7 +350,8 @@ df_disp_var
 | ESCOLA_PUBLICA | 452.0 | 61.02 | 3722.66 | 48.43 |
 | ESCOLA_PRIVADA | 377.9 | 80.59 | 6481.31 | 65.79 |
 
-Olhando para o desvio padrão, percebemos que as notas das escolas privadas estão melhores distribuídas em torno da média. Além disso, a variância nos mostra que os dados das escola públicas estão mais condensados ao valor central.
+Olhando para o desvio padrão, percebemos que as notas das escolas privadas estão melhores distribuídas em torno da média.
+Além disso, a variância nos mostra que os dados das escola públicas estão mais condensados ao valor central.
 
 ## Medidas de Posição
 
@@ -396,7 +397,8 @@ outliers_notas.show()
 
 ![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/outliers_notas.png)
 
-Há diversas ocorrências de dados discrepantes para as escolas públicas, enquanto que, para escolas privadas, o mesmo não acontece. Com isso, subentende-se que, as notas das escolas privadas encontram certa consistência entre si.
+Há diversas ocorrências de dados discrepantes para as escolas públicas, enquanto que, para escolas privadas, o mesmo não acontece.
+Com isso, subentende-se que, as notas das escolas privadas encontram certa consistência entre si.
 
 ## Comparação Entre os Questionários dos Alunos de Escolas Públicas e Privadas
 
@@ -413,7 +415,7 @@ df_plot = df_estudo.copy()[["TP_ESCOLA", "Q001", "Q002", "Q003", "Q004", "Q005",
                             "Q024", "Q025"]]
 df_plot.head()
 ```
-#### Fazendo substituição dos valores nos registros.
+### Fazendo substituição dos valores nos registros.
 
 ```python
 df_plot.Q001 = df_plot.Q001.replace(
