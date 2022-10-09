@@ -38,38 +38,38 @@ df[["NOTA_CN",	"NOTA_CH",	"NOTA_LC",	"NOTA_MT", "NOTA_REDACAO", "TP_ESCOLA",
     "Q022",	"Q023",	"Q024",	"Q025"]].isnull().sum()
 ```
 
-> NOTA_CN         0  
-> NOTA_CH         0  
-> NOTA_LC         0  
-> NOTA_MT         0  
-> NOTA_REDACAO    0  
-> TP_ESCOLA       0  
-> FAIXA_ETARIA    0  
-> Q001            0  
-> Q002            0  
-> Q003            0  
-> Q004            0  
-> Q005            0  
-> Q006            0  
-> Q007            0  
-> Q008            0  
-> Q009            0  
-> Q010            0  
-> Q011            0  
-> Q012            0  
-> Q013            0  
-> Q014            0  
-> Q015            0  
-> Q016            0  
-> Q017            0  
-> Q018            0  
-> Q019            0  
-> Q020            0  
-> Q021            0  
-> Q022            0  
-> Q023            0  
-> Q024            0  
-> Q025            0  
+> NOTA_CN      |  0  
+> NOTA_CH      |  0  
+> NOTA_LC      |  0  
+> NOTA_MT      |  0  
+> NOTA_REDACAO |  0  
+> TP_ESCOLA    |  0  
+> FAIXA_ETARIA |  0  
+> Q001         |  0  
+> Q002         |  0  
+> Q003         |  0  
+> Q004         |  0  
+> Q005         |  0  
+> Q006   |  0  
+> Q007   |  0  
+> Q008   |  0  
+> Q009   |  0  
+> Q010   |  0  
+> Q011   |  0  
+> Q012   |  0  
+> Q013   |  0  
+> Q014   |  0  
+> Q015   |  0  
+> Q016   |  0  
+> Q017   |  0  
+> Q018   |  0  
+> Q019   |  0  
+> Q020   |  0  
+> Q021   |  0  
+> Q022   |  0  
+> Q023   |  0  
+> Q024   |  0  
+> Q025   |  0  
 > dtype: int64  
 
 Não há valores nulos para as principais variáveis em estudo.
