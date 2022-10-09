@@ -82,10 +82,10 @@ A população de estudo será dividida em dois grupos de vestibulandos por tipo 
 ```python
 df.TP_ESCOLA.value_counts()
 ```
-> nao_respondeu    7581
-> publica          2961
-> privada           478
-> Name: TP_ESCOLA, dtype: int64
+> nao_respondeu    7581  
+> publica          2961  
+> privada           478  
+> Name: TP_ESCOLA, dtype: int64  
 
 ```python
 esc_invalida = df[df.TP_ESCOLA == "nao_respondeu"].index
@@ -129,9 +129,9 @@ df_estudo.shape
 ```python
 df_estudo.TP_ESCOLA.value_counts()
 ```
-> publica    2961
-> privada     478
-> Name: TP_ESCOLA, dtype: int64
+> publica    2961  
+> privada     478  
+> Name: TP_ESCOLA, dtype: int64  
 
 
 O total de vestibulandos de escolas públicas e privadas é de 3439. Desses, 2961 matriculados em escolas públicas e 478 em escolas privadas.
@@ -238,9 +238,13 @@ Percebemos que as notas das escolas públicas estão distribuidas assimétricame
 Frequência de faixas etárias dos vestibulandos que fizeram a prova do ENEM 2021.
 
 ```python
-px.bar(df_freq_pub, x="ABSOLUTA", text_auto=True)
+fx_eta_pub = px.bar(df_freq_pub, x="ABSOLUTA", text_auto=True)
+fx_eta_pub.show()
+```
 
-px.bar(df_freq_priv, x="ABSOLUTA", text_auto=True)
+```python
+fx_eta_priv = px.bar(df_freq_priv, x="ABSOLUTA", text_auto=True)
+fx_eta_priv.show()
 ```
 
 A variabilidade de participantes vestibulandos em diferentes faixa etárias de escolas públicas é maior, em relação às escolas privadas. Além disso, tanto para escolas públicas, quanto para privadas, a maior ocorrência foram de alunos entre 18 e 17 anos.
@@ -335,8 +339,8 @@ df_disp_var
 
 | --- AMPLITUDE| --- | DESVIO_PADRAO | VARIANCIA | DESVIO_ABS_MEDIO |
 | --- |  --- | --- | --- |
-| --- ESCOLA_PUBLICA| --- | 452.0 | 61.02 | 3722.66 | 48.43 |
-| --- ESCOLA_PRIVADA| --- | 377.9 | 80.59 | 6481.31 | 65.79 |
+| --- | ESCOLA_PUBLICA | --- | 452.0 | 61.02 | 3722.66 | 48.43 |
+| --- | ESCOLA_PRIVADA | --- | 377.9 | 80.59 | 6481.31 | 65.79 |
 
 Olhando para o desvio padrão, percebemos que as notas das escolas privadas estão melhores distribuídas em torno da média. Além disso, a variância nos mostra que os dados das escola públicas estão mais condensados ao valor central.
 
@@ -377,8 +381,9 @@ df_med_pos
 ### Outliers
 
 ```python
-px.box(data_frame=df_estudo, y="NOTA_FINAL", width=500, height=600,
-       color="TP_ESCOLA")
+outliers_notas = px.box(data_frame=df_estudo, y="NOTA_FINAL",
+                        width=500, height=600, color="TP_ESCOLA")
+outliers_notas.show()
 ```
 
 Há diversas ocorrências de dados discrepantes para as escolas públicas, enquanto que, para escolas privadas, o mesmo não acontece. Com isso, subentende-se que, as notas das escolas privadas encontram certa consistência entre si.
