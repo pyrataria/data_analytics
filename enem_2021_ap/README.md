@@ -226,7 +226,7 @@ graph_freq_notas = px.histogram(df_estudo, x="NOTA_FINAL", height=700,
 graph_freq_notas.update_layout(bargap=0)
 ```
 
-![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_freq_notas.html)
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_freq_notas.png)
 
 Percebemos que as notas das escolas públicas estão distribuidas assimétricamente à direita, enquanto que, as de escolas particulares, encontram-se mais uniformemente distribuídas. Ou seja, para as escolas públicas, quando o valor da nota aumenta, o número de ocorrências diminui.
 
