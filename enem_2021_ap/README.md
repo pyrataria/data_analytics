@@ -23,7 +23,7 @@ df.head()
 df.shape
 ```
 
->> (11020, 52)
+> (11020, 52)
 
 O número total de vestibulandos no Amapá é de 11020 pessoas.
 
