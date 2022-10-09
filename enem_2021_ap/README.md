@@ -337,10 +337,10 @@ df_disp_var = pd.DataFrame(data_disp_var, index=["ESCOLA_PUBLICA", "ESCOLA_PRIVA
 df_disp_var
 ```
 
-| --- | AMPLITUDE | --- | DESVIO_PADRAO | VARIANCIA | DESVIO_ABS_MEDIO |
+| --- | AMPLITUDE | DESVIO_PADRAO | VARIANCIA | DESVIO_ABS_MEDIO |
 | --- |  --- | --- | --- |
-| --- | ESCOLA_PUBLICA | --- | 452.0 | 61.02 | 3722.66 | 48.43 |
-| --- | ESCOLA_PRIVADA | --- | 377.9 | 80.59 | 6481.31 | 65.79 |
+ESCOLA_PUBLICA | 452.0 | 61.02 | 3722.66 | 48.43 |
+ESCOLA_PRIVADA | 377.9 | 80.59 | 6481.31 | 65.79 |
 
 Olhando para o desvio padrão, percebemos que as notas das escolas privadas estão melhores distribuídas em torno da média. Além disso, a variância nos mostra que os dados das escola públicas estão mais condensados ao valor central.
 
