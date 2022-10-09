@@ -118,8 +118,8 @@ df_freq_pub = pd.concat([abs_pub, rel_pub, perc_pub], axis=1)
 df_freq_pub
 ```
 
-| ABSOLUTA | RELATIVA | PERCENTUAL_RELATIVA |
- --- | --- | --- |  
+| --- |  | ABSOLUTA | RELATIVA | PERCENTUAL_RELATIVA |
+| --- |  --- | --- | --- |  
  | 18 anos | 	1446 | 	0.4883 | 	48.83 | 
  | 17 anos | 	1020	 | 0.3445 | 	34.45 | 
  | 19 anos | 	306	 | 0.1033 | 	10.33 | 
