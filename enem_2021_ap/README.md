@@ -23,6 +23,8 @@ df.head()
 df.shape
 ```
 
+>> (11020, 52)
+
 O número total de vestibulandos no Amapá é de 11020 pessoas.
 
 ## Valores nulos
@@ -36,6 +38,40 @@ df[["NOTA_CN",	"NOTA_CH",	"NOTA_LC",	"NOTA_MT", "NOTA_REDACAO", "TP_ESCOLA",
     "Q022",	"Q023",	"Q024",	"Q025"]].isnull().sum()
 ```
 
+>> NOTA_CN         0
+>> NOTA_CH         0
+>> NOTA_LC         0
+>> NOTA_MT         0
+>> NOTA_REDACAO    0
+>> TP_ESCOLA       0
+>> FAIXA_ETARIA    0
+>> Q001            0
+>> Q002            0
+>> Q003            0
+>> Q004            0
+>> Q005            0
+>> Q006            0
+>> Q007            0
+>> Q008            0
+>> Q009            0
+>> Q010            0
+>> Q011            0
+>> Q012            0
+>> Q013            0
+>> Q014            0
+>> Q015            0
+>> Q016            0
+>> Q017            0
+>> Q018            0
+>> Q019            0
+>> Q020            0
+>> Q021            0
+>> Q022            0
+>> Q023            0
+>> Q024            0
+>> Q025            0
+>> dtype: int64
+
 Não há valores nulos para as principais variáveis em estudo.
 
 # Identificação da População e das Variáveis
@@ -45,7 +81,13 @@ A população de estudo será dividida em dois grupos de vestibulandos por tipo 
 
 ```python
 df.TP_ESCOLA.value_counts()
+```
+>> nao_respondeu    7581
+>> publica          2961
+>> privada           478
+>> Name: TP_ESCOLA, dtype: int64
 
+```python
 esc_invalida = df[df.TP_ESCOLA == "nao_respondeu"].index
 
 df_estudo = df.copy().drop(esc_invalida)
@@ -80,9 +122,18 @@ df_estudo.FAIXA_ETARIA = df_estudo.FAIXA_ETARIA.replace(
 df_estudo.head()
 
 df_estudo.shape
+```
 
+>> (3439, 53)
+
+```python
 df_estudo.TP_ESCOLA.value_counts()
 ```
+>> publica    2961
+>> privada     478
+>> Name: TP_ESCOLA, dtype: int64
+
+
 O total de vestibulandos de escolas públicas e privadas é de 3439. Desses, 2961 matriculados em escolas públicas e 478 em escolas privadas.
 
 **Escola Pública:**
@@ -93,6 +144,8 @@ esc_publica = df_estudo.copy().query("TP_ESCOLA == 'publica'").drop("TP_ESCOLA",
 esc_publica.shape
 ```
 
+>> (2961, 52)
+
 **Escola Privada:**
 
 ```python
@@ -100,6 +153,8 @@ esc_privada = df_estudo.copy().query("TP_ESCOLA == 'privada'").drop("TP_ESCOLA",
 
 esc_privada.shape
 ```
+
+>> (478, 52)
 
 # Descrição dos Dados
 ## Frequências absoluta, percentual e percentual relativa
@@ -118,24 +173,24 @@ df_freq_pub = pd.concat([abs_pub, rel_pub, perc_pub], axis=1)
 df_freq_pub
 ```
 
-| ABSOLUTA |  RELATIVA |  PERCENTUAL_RELATIVA |
-| --- |  --- | --- | --- |
-| 18 anos | 1446 | 0.4883 | 48.83 |
-| 17 anos | 1020 | 0.3445 | 34.45 |
-| 19 anos | 306 | 0.1033 | 10.33 |
-| 20 anos | 76 | 0.0257 | 2.57 |
-| Menor de 17 anos | 59 | 0.0199 | 1.99 |
-| 21 anos | 19 | 0.0064 | 0.64 |
-| 22 anos | 9 | 0.0030 | 0.30 |
-| Entre 31 e 35 anos | 6 | 0.0020 | 0.20 |
-| 23 anos | 5 | 0.0017 | 0.17 |
-| 24 anos | 4 | 0.0014 | 0.14 |
-| Entre 26 e 30 anos | 4 | 0.0014 | 0.14 |
-| 25 anos | 3 | 0.0010 | 0.10 |
-| Entre 36 e 40 anos | 3 | 0.0010 | 0.10 |
-| Entre 51 e 55 anos | 1 | 0.0003 | 0.03 |
+| --- | ABSOLUTA | RELATIVA | PERCENTUAL_RELATIVA |
+| --- | --- | --- | --- |
+| 18 anos |	1446 |	0.4883 | 48.83 |
+| 17 anos |	1020 |	0.3445 |	34.45 |
+| 19 anos |	306 |	0.1033 |	10.33 |
+| 20 anos |	76 |	0.0257 |	2.57 |
+| Menor de 17 anos | 59 |	0.0199 |	1.99 |
+| 21 anos |	19 | 0.0064 |	0.64 |
+| 22 anos |	9 |	0.0030 |	0.30 |
+| Entre 31 e 35 anos |	6 |	0.0020 |	0.20 |
+| 23 anos |	5 |	0.0017 |	0.17 |
+| 24 anos |	4 |	0.0014 |	0.14 |
+| Entre 26 e 30 anos |	4 |	0.0014 |	0.14 |
+| 25 anos |	3 |	0.0010 |	0.10 |
+| Entre 36 e 40 anos |	3 |	0.0010 |	0.10 |
+| Entre 51 e 55 anos |	1 |	0.0003 |	0.03 |
 
-Percebemos que a maior parte dos valores para as escolas públicas está concetrada entre as faixas de 17 a 20 anos
+Percebemos que a maior parte dos valores para as escolas públicas está concetrada entre as faixas de 17 a 20 anos.
 
 **Escolas Privadas:**
 
@@ -159,7 +214,7 @@ df_freq_priv
 | 20 anos | 1 | 0.0021 | 0.21 |
 
 Para as escolas privadas, idades entre 17 e 18 anos predominam, muito dentro do que se encontra para idade do ensino médio regular.  
-Além disso, no escopo do conjunto de dados a maior ocorrência de idades foram de pessoas de até 20 anos.
+Além disso, no escopo do conjunto de dados a maior ocorrência de idades foram de pessoas de até 19 anos.
 
 ### Visualização de frequências
 
@@ -173,12 +228,11 @@ Frequência de notas finais do enem, em relação ao percentual em que as mesmas
 ```python
 graph_freq_notas = px.histogram(df_estudo, x="NOTA_FINAL", height=700,
                                 marginal="rug", histnorm="percent",
-                                barmode="group", color="TP_ESCOLA",
-                                title="Distribuição de Notas - ENEM 2021 AP")
+                                barmode="group", color="TP_ESCOLA")
 graph_freq_notas.update_layout(bargap=0)
 ```
 
-Percebemos que as notas das escolas públicas estão distribuidas assimétricamente à direita, enquanto que, as de escolas particulares, encontram-se mais uniformemente distribuídas.
+Percebemos que as notas das escolas públicas estão distribuidas assimétricamente à direita, enquanto que, as de escolas particulares, encontram-se mais uniformemente distribuídas. Ou seja, para as escolas públicas, quando o valor da nota aumenta, o número de ocorrências diminui.
 
 **Faixas Etárias:**  
 Frequência de faixas etárias dos vestibulandos que fizeram a prova do ENEM 2021.
@@ -192,7 +246,7 @@ px.bar(df_freq_priv, x="ABSOLUTA", text_auto=True)
 A variabilidade de participantes vestibulandos em diferentes faixa etárias de escolas públicas é maior, em relação às escolas privadas. Além disso, tanto para escolas públicas, quanto para privadas, a maior ocorrência foram de alunos entre 18 e 17 anos.
 
 ## Medidas de Tendência Central  
-Média, moda e mediana de escolas públicas e privadas.
+Média, moda e mediana das notas de escolas públicas e privadas.
 
 **Média:**
 
@@ -232,6 +286,8 @@ df_med_cent
 ```python
 round((mean_priv / mean_pub) * 100, 2)
 ```
+
+>> 118.1
 
 Com isso, percebemos que as escolas apresentaram 3 modas cada.
 A partir da tabela, podemos concluir também que a média das notas finais das escolas privadas é 118,1% maior, em relação as das escolas públicas.
