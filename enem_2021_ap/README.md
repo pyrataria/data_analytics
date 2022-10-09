@@ -118,22 +118,22 @@ df_freq_pub = pd.concat([abs_pub, rel_pub, perc_pub], axis=1)
 df_freq_pub
 ```
 
-| ABSOLUTA | RELATIVA | PERCENTUAL_RELATIVA |
- --- | --- | --- |  
- | 18 anos | 	1446 | 	0.4883 | 	48.83 | 
- | 17 anos | 	1020	 | 0.3445 | 	34.45 | 
- | 19 anos | 	306	 | 0.1033 | 	10.33 | 
- | 20 anos | 	76	 | 0.0257 | 	2.57 | 
- | Menor de 17 anos | 	59	0.0199 | 	1.99 | 
- | 21 anos | 	19	0.0064 | 	0.64 | 
- | 22 anos | 	9	0.0030 | 	0.30 | 
- | Entre 31 e 35 anos | 	6	0.0020 | 	0.20 | 
- | 23 anos | 	5	0.0017	0.17 | 
- | 24 anos | 	4	0.0014	0.14 | 
- | Entre 26 e 30 anos | 	4	0.0014 | 	0.14 | 
- | 25 anos | 	3	0.001 | 0	0.10 | 
- | Entre 36 e 40 anos | 	3	0.0010 | 	0.10 | 
- | Entre 51 e 55 anos | 	1	0.0003 | 	0.03 | 
+| --- | ABSOLUTA | RELATIVA | PERCENTUAL_RELATIVA |
+| --- |  --- | --- | --- |
+| 18 anos | 	1446 | 	0.4883 | 	48.83 | 
+| 17 anos | 	1020	 | 0.3445 | 	34.45 | 
+| 19 anos | 	306	 | 0.1033 | 	10.33 | 
+| 20 anos | 	76	 | 0.0257 | 	2.57 | 
+| Menor de 17 anos | 	59 | 	0.0199 | 	1.99 | 
+| 21 anos | 	19 | 	0.0064 | 	0.64 | 
+| 22 anos | 	9 | 	0.0030 | 	0.30 | 
+| Entre 31 e 35 anos | 	6 | 	0.0020 | 	0.20 | 
+| 23 anos | 	5 | 	0.0017	0.17 | 
+| 24 anos | 	4 | 	0.0014	0.14 | 
+| Entre 26 e 30 anos | 	4 | 	0.0014 | 	0.14 | 
+| 25 anos | 	3	0.001 | 0 | 	0.10 | 
+| Entre 36 e 40 anos | 	3 | 	0.0010 | 	0.10 | 
+| Entre 51 e 55 anos | 	1 | 	0.0003 | 	0.03 | 
 
 Percebemos que a maior parte dos valores para as escolas públicas está concetrada entre as faixas de 17 a 20 anos
 
@@ -149,6 +149,15 @@ perc_priv = pd.DataFrame.from_dict(round(rel_priv * 100, 4)).rename(columns={"RE
 df_freq_priv = pd.concat([abs_priv, rel_priv, perc_priv], axis=1)
 df_freq_priv
 ```
+
+| --- | ABSOLUTA | RELATIVA | PERCENTUAL_RELATIVA |
+| --- |  --- | --- | --- |
+| 17 anos | 306 | 0.6402 | 64.02 |
+| 18 anos | 140 | 0.2929 | 29.29 |
+| Menor de 17 anos | 24 | 0.0502 | 5.02 |
+| 19 anos | 7 | 0.0146 | 1.46 |
+| 20 anos | 1 | 0.0021 | 0.21 |
+
 Para as escolas privadas, idades entre 17 e 18 anos predominam, muito dentro do que se encontra para idade do ensino médio regular.  
 Além disso, no escopo do conjunto de dados a maior ocorrência de idades foram de pessoas de até 20 anos.
 
@@ -213,7 +222,14 @@ data_cent = {
 
 df_med_cent = pd.DataFrame(data_cent, index=["ESCOLA_PUBLICA", "ESCOLA_PRIVADA"])
 df_med_cent
+```
 
+| --- | MEDIA | MODA | MEDIANA |
+| --- |  --- | --- | --- |
+| ESCOLA_PUBLICA | 488.31 | [447.04, 501.3, 533.06] | 479.70 |
+| ESCOLA_PRIVADA | 576.67 | [470.92, 528.24, 663.78] | 572.73 |
+
+```python
 round((mean_priv / mean_pub) * 100, 2)
 ```
 
@@ -261,6 +277,11 @@ df_disp_var = pd.DataFrame(data_disp_var, index=["ESCOLA_PUBLICA", "ESCOLA_PRIVA
 df_disp_var
 ```
 
+| --- AMPLITUDE| --- | DESVIO_PADRAO | VARIANCIA | DESVIO_ABS_MEDIO |
+| --- |  --- | --- | --- |
+| --- ESCOLA_PUBLICA| --- | 452.0 | 61.02 | 3722.66 | 48.43 |
+| --- ESCOLA_PRIVADA| --- | 377.9 | 80.59 | 6481.31 | 65.79 |
+
 Olhando para o desvio padrão, percebemos que as notas das escolas privadas estão melhores distribuídas em torno da média. Além disso, a variância nos mostra que os dados das escola públicas estão mais condensados ao valor central.
 
 ## Medidas de Posição
@@ -292,6 +313,10 @@ data_med_pos = {
 df_med_pos = pd.DataFrame(data_med_pos, index=["ESCOLA_PUBLICA", "ESCOLA_PRIVADA"])
 df_med_pos
 ```
+| Q1 | Q2 | Q3 | Q4 | IQR |
+| --- | --- | --- | --- |
+| ESCOLA_PUBLICA | 443.60 | 479.70 | 524.700 | 778.14 | 81.100 |
+| ESCOLA_PRIVADA | 520.06 | 572.73 | 636.495 | 775.64 | 116.435 |
 
 ### Outliers
 
