@@ -89,11 +89,9 @@ df.TP_ESCOLA.value_counts()
 
 ```python
 esc_invalida = df[df.TP_ESCOLA == "nao_respondeu"].index
-
 df_estudo = df.copy().drop(esc_invalida)
 
 nota_final = ["NOTA_CN", "NOTA_CH",	"NOTA_LC",	"NOTA_MT", "NOTA_REDACAO"]
-
 df_estudo.insert(20, "NOTA_FINAL", df_estudo[nota_final].sum(axis=1) / 5)
 
 df_estudo.FAIXA_ETARIA = df_estudo.FAIXA_ETARIA.replace(
@@ -142,7 +140,6 @@ O total de vestibulandos de escolas públicas e privadas é de 3439. Desses, 296
 
 ```python
 esc_publica = df_estudo.copy().query("TP_ESCOLA == 'publica'").drop("TP_ESCOLA", axis=1)
-
 esc_publica.shape
 ```
 
@@ -152,7 +149,6 @@ esc_publica.shape
 
 ```python
 esc_privada = df_estudo.copy().query("TP_ESCOLA == 'privada'").drop("TP_ESCOLA", axis=1)
-
 esc_privada.shape
 ```
 
@@ -166,9 +162,7 @@ Frequências absoluta, percentual e percentual relativa da faixa etária de idad
 
 ```python
 abs_pub = pd.DataFrame.from_dict(esc_publica.FAIXA_ETARIA.value_counts()).rename(columns={"FAIXA_ETARIA": "ABSOLUTA"})
-
 rel_pub = pd.DataFrame.from_dict(round(abs_pub / abs_pub.sum(), 4)).rename(columns={"ABSOLUTA": "RELATIVA"})
-
 perc_pub = pd.DataFrame.from_dict(round(rel_pub * 100, 4)).rename(columns={"RELATIVA": "PERCENTUAL_RELATIVA"})
 
 df_freq_pub = pd.concat([abs_pub, rel_pub, perc_pub], axis=1)
@@ -198,9 +192,7 @@ Percebemos que a maior parte dos valores para as escolas públicas está concetr
 
 ```python
 abs_priv = pd.DataFrame.from_dict(esc_privada.FAIXA_ETARIA.value_counts()).rename(columns={"FAIXA_ETARIA": "ABSOLUTA"})
-
 rel_priv = pd.DataFrame.from_dict(round(abs_priv / abs_priv.sum(), 4)).rename(columns={"ABSOLUTA": "RELATIVA"})
-
 perc_priv = pd.DataFrame.from_dict(round(rel_priv * 100, 4)).rename(columns={"RELATIVA": "PERCENTUAL_RELATIVA"})
 
 df_freq_priv = pd.concat([abs_priv, rel_priv, perc_priv], axis=1)
@@ -233,9 +225,8 @@ graph_freq_notas = px.histogram(df_estudo, x="NOTA_FINAL", height=700,
                                 barmode="group", color="TP_ESCOLA")
 graph_freq_notas.update_layout(bargap=0)
 ```
-> [Interativa](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_freq_notas.html)
 
-![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_freq_notas.png)
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_freq_notas.html)
 
 Percebemos que as notas das escolas públicas estão distribuidas assimétricamente à direita, enquanto que, as de escolas particulares, encontram-se mais uniformemente distribuídas. Ou seja, para as escolas públicas, quando o valor da nota aumenta, o número de ocorrências diminui.
 
@@ -409,7 +400,9 @@ Para esse módulo, será criado um novo dataset, apenas com as variáveis a sere
 ```python
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+```
 
+```python
 df_plot = df_estudo.copy()[["TP_ESCOLA", "Q001", "Q002", "Q003", "Q004", "Q005",
                             "Q006", "Q007", "Q008", "Q009", "Q010", "Q011",
                             "Q012", "Q013", "Q014", "Q015", "Q016", "Q017",
@@ -513,7 +506,9 @@ df_plot.Q025 = df_plot.Q025.replace(
    "B":	"Sim"})
 
 df_plot.head()
+```
 
+```python
 quest = {"Q001": "Até que série seu pai, ou o homem responsável por você, estudou?",
          "Q002": "Até que série sua mãe, ou a mulher responsável por você, estudou?",
          "Q005": "Incluindo você, quantas pessoas moram atualmente em sua residência?",
