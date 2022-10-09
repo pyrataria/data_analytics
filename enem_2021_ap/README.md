@@ -23,7 +23,7 @@ df.head()
 df.shape
 ```
 
->> (11020, 52)
+> (11020, 52)
 
 O número total de vestibulandos no Amapá é de 11020 pessoas.
 
@@ -38,39 +38,39 @@ df[["NOTA_CN",	"NOTA_CH",	"NOTA_LC",	"NOTA_MT", "NOTA_REDACAO", "TP_ESCOLA",
     "Q022",	"Q023",	"Q024",	"Q025"]].isnull().sum()
 ```
 
->> NOTA_CN         0
->> NOTA_CH         0
->> NOTA_LC         0
->> NOTA_MT         0
->> NOTA_REDACAO    0
->> TP_ESCOLA       0
->> FAIXA_ETARIA    0
->> Q001            0
->> Q002            0
->> Q003            0
->> Q004            0
->> Q005            0
->> Q006            0
->> Q007            0
->> Q008            0
->> Q009            0
->> Q010            0
->> Q011            0
->> Q012            0
->> Q013            0
->> Q014            0
->> Q015            0
->> Q016            0
->> Q017            0
->> Q018            0
->> Q019            0
->> Q020            0
->> Q021            0
->> Q022            0
->> Q023            0
->> Q024            0
->> Q025            0
->> dtype: int64
+> NOTA_CN         0
+> NOTA_CH         0
+> NOTA_LC         0
+> NOTA_MT         0
+> NOTA_REDACAO    0
+> TP_ESCOLA       0
+> FAIXA_ETARIA    0
+> Q001            0
+> Q002            0
+> Q003            0
+> Q004            0
+> Q005            0
+> Q006            0
+> Q007            0
+> Q008            0
+> Q009            0
+> Q010            0
+> Q011            0
+> Q012            0
+> Q013            0
+> Q014            0
+> Q015            0
+> Q016            0
+> Q017            0
+> Q018            0
+> Q019            0
+> Q020            0
+> Q021            0
+> Q022            0
+> Q023            0
+> Q024            0
+> Q025            0
+> dtype: int64
 
 Não há valores nulos para as principais variáveis em estudo.
 
@@ -82,10 +82,10 @@ A população de estudo será dividida em dois grupos de vestibulandos por tipo 
 ```python
 df.TP_ESCOLA.value_counts()
 ```
->> nao_respondeu    7581
->> publica          2961
->> privada           478
->> Name: TP_ESCOLA, dtype: int64
+> nao_respondeu    7581
+> publica          2961
+> privada           478
+> Name: TP_ESCOLA, dtype: int64
 
 ```python
 esc_invalida = df[df.TP_ESCOLA == "nao_respondeu"].index
@@ -124,14 +124,14 @@ df_estudo.head()
 df_estudo.shape
 ```
 
->> (3439, 53)
+> (3439, 53)
 
 ```python
 df_estudo.TP_ESCOLA.value_counts()
 ```
->> publica    2961
->> privada     478
->> Name: TP_ESCOLA, dtype: int64
+> publica    2961
+> privada     478
+> Name: TP_ESCOLA, dtype: int64
 
 
 O total de vestibulandos de escolas públicas e privadas é de 3439. Desses, 2961 matriculados em escolas públicas e 478 em escolas privadas.
@@ -144,7 +144,7 @@ esc_publica = df_estudo.copy().query("TP_ESCOLA == 'publica'").drop("TP_ESCOLA",
 esc_publica.shape
 ```
 
->> (2961, 52)
+> (2961, 52)
 
 **Escola Privada:**
 
@@ -154,7 +154,7 @@ esc_privada = df_estudo.copy().query("TP_ESCOLA == 'privada'").drop("TP_ESCOLA",
 esc_privada.shape
 ```
 
->> (478, 52)
+> (478, 52)
 
 # Descrição dos Dados
 ## Frequências absoluta, percentual e percentual relativa
@@ -287,7 +287,7 @@ df_med_cent
 round((mean_priv / mean_pub) * 100, 2)
 ```
 
->> 118.1
+> 118.1
 
 Com isso, percebemos que as escolas apresentaram 3 modas cada.
 A partir da tabela, podemos concluir também que a média das notas finais das escolas privadas é 118,1% maior, em relação as das escolas públicas.
