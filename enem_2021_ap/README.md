@@ -394,7 +394,7 @@ outliers_notas = px.box(data_frame=df_estudo, y="NOTA_FINAL",
 outliers_notas.show()
 ```
 
-![]()
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/outliers_notas.png)
 
 Há diversas ocorrências de dados discrepantes para as escolas públicas, enquanto que, para escolas privadas, o mesmo não acontece. Com isso, subentende-se que, as notas das escolas privadas encontram certa consistência entre si.
 
