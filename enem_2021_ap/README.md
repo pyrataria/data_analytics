@@ -338,7 +338,7 @@ df_disp_var
 ```
 
 | --- | AMPLITUDE | DESVIO_PADRAO | VARIANCIA | DESVIO_ABS_MEDIO |
-| --- |  --- | --- | --- |
+| --- |  --- | --- | --- | --- |
 | ESCOLA_PUBLICA | 452.0 | 61.02 | 3722.66 | 48.43 |
 | ESCOLA_PRIVADA | 377.9 | 80.59 | 6481.31 | 65.79 |
 
