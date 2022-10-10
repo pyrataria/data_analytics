@@ -1,12 +1,13 @@
-Estudo estatístico onde serão abordadas algumas variáveis sobre o ENEM 2021 no Estado do Amapá.  
+# Análise de Dados do ENEM 2021 no Amapá
+Estudo estatístico onde serão abordadas algumas variáveis sobre o ENEM 2021 no Estado do Amapá, fazendo comparação entre dados de alunos de escolas públicas e privadas.  
 Para esse estudo, será utilizado um dataset pré-tratado, relativo às provas do ENEM, realizadas no Amapá, que por sua vez, foi retirado dos [microdados](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem) do ENEM 2021.
+
+# Preparação, Organização e Estruturação dos Dados
 ### Importando o pandas
 
 ```python
 import pandas as pd
 ```
-
-# Preparação, Organização e Estruturação dos Dados
 
 ```python
 pd.set_option("display.max_columns", 100)
@@ -38,38 +39,38 @@ df[["NOTA_CN",	"NOTA_CH",	"NOTA_LC",	"NOTA_MT", "NOTA_REDACAO", "TP_ESCOLA",
     "Q022",	"Q023",	"Q024",	"Q025"]].isnull().sum()
 ```
 
-> NOTA_CN      |  0  
-> NOTA_CH      |  0  
-> NOTA_LC      |  0  
-> NOTA_MT      |  0  
-> NOTA_REDACAO |  0  
-> TP_ESCOLA    |  0  
-> FAIXA_ETARIA |  0  
-> Q001         |  0  
-> Q002         |  0  
-> Q003         |  0  
-> Q004         |  0  
-> Q005         |  0  
-> Q006   |  0  
-> Q007   |  0  
-> Q008   |  0  
-> Q009   |  0  
-> Q010   |  0  
-> Q011   |  0  
-> Q012   |  0  
-> Q013   |  0  
-> Q014   |  0  
-> Q015   |  0  
-> Q016   |  0  
-> Q017   |  0  
-> Q018   |  0  
-> Q019   |  0  
-> Q020   |  0  
-> Q021   |  0  
-> Q022   |  0  
-> Q023   |  0  
-> Q024   |  0  
-> Q025   |  0  
+> NOTA_CN         0  
+> NOTA_CH         0  
+> NOTA_LC         0  
+> NOTA_MT         0  
+> NOTA_REDACAO    0  
+> TP_ESCOLA       0  
+> FAIXA_ETARIA    0  
+> Q001            0  
+> Q002            0  
+> Q003            0  
+> Q004            0  
+> Q005            0  
+> Q006      0  
+> Q007      0  
+> Q008      0  
+> Q009      0  
+> Q010      0  
+> Q011      0  
+> Q012      0  
+> Q013      0  
+> Q014      0  
+> Q015      0  
+> Q016      0  
+> Q017      0  
+> Q018      0  
+> Q019      0  
+> Q020      0  
+> Q021      0  
+> Q022      0  
+> Q023      0  
+> Q024      0  
+> Q025      0  
 > dtype: int64  
 
 Não há valores nulos para as principais variáveis em estudo.
@@ -294,8 +295,8 @@ round((mean_priv / mean_pub) * 100, 2)
 
 > 118.1
 
-Com isso, percebemos que as escolas apresentaram 3 modas cada.
-A partir da tabela, podemos concluir também que a média das notas finais das escolas privadas é 118,1% maior, em relação as das escolas públicas.
+A partir da tabela, podemos concluir que a média das notas finais das escolas privadas é 118,1% maior, em relação as das escolas públicas.  
+É possível notar também que, ambos os tipos de escolas apresentaram 3 modas cada.
 
 ## Medidas de dispersão ou variação
 Será verificado o grau de variação das notas finais com relação a média.
@@ -343,8 +344,8 @@ df_disp_var
 | ESCOLA_PUBLICA | 452.0 | 61.02 | 3722.66 | 48.43 |
 | ESCOLA_PRIVADA | 377.9 | 80.59 | 6481.31 | 65.79 |
 
-Olhando para o desvio padrão, percebemos que as notas das escolas privadas estão melhores distribuídas em torno da média.
-Além disso, a variância nos mostra que os dados das escola públicas estão mais condensados ao valor central.
+Olhando para o desvio padrão, percebemos que as notas das escolas privadas estão melhores distribuídas em torno da média.  
+Além disso, a variância nos mostra que os dados das escola públicas estão mais condensados em torno do valor central.
 
 ## Medidas de Posição
 
@@ -390,11 +391,9 @@ outliers_notas.show()
 
 ![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/outliers_notas.png)
 
-Há diversas ocorrências de dados discrepantes para as escolas públicas, enquanto que, para escolas privadas, o mesmo não acontece.
-Com isso, subentende-se que, as notas das escolas privadas encontram certa consistência entre si.
+Há diversas ocorrências de dados discrepantes para as escolas públicas, enquanto que, para escolas privadas, o mesmo não acontece. Com isso, subentende-se que, as notas das escolas privadas encontram certa consistência entre si.
 
 ## Comparação Entre os Questionários dos Alunos de Escolas Públicas e Privadas
-
 Para esse módulo, será criado um novo dataset, apenas com as variáveis a serem visualizadas.
 
 ```python
@@ -410,7 +409,7 @@ df_plot = df_estudo.copy()[["TP_ESCOLA", "Q001", "Q002", "Q003", "Q004", "Q005",
                             "Q024", "Q025"]]
 df_plot.head()
 ```
-### Fazendo substituição dos valores nos registros.
+### Fazendo substituição dos valores nos registros
 
 ```python
 df_plot.Q001 = df_plot.Q001.replace(
