@@ -545,6 +545,8 @@ graph_q001.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
 ```
 ![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q001.png)
 
+Para ambos os tipos de escolas, o que predomina são pais que completaram o ensino médio, mas não a faculdade. Os dados começam a ficar discrepantes quando se compara os que completaram a faculdade e a pós graduação, por exemplo.
+
 ```python
 q002_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q002"].value_counts()
 label_pub = q002_pub.index
@@ -566,6 +568,8 @@ graph_q002.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
 ```
 
 ![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q002.png)
+
+Já para as mães, a maior concentração está na faixa dos 40%, porém, com valores totalmente diferentes. As de escolas públicas, completaram apenas o ensino médio, enquanto que as de escolas privadas, completaram a pós graduação.
 
 ```python
 q005_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q005"].value_counts()
@@ -589,6 +593,8 @@ graph_q005.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
 
 ![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q005.png)
 
+Para ambos, a maioria reside em residências com total de habitantes entre 3 e 6 pessoas.
+
 ```python
 q006_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q006"].value_counts()
 label_pub = q006_pub.index
@@ -610,6 +616,8 @@ graph_q006.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
 ```
 
 ![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q006.png)
+
+A renda mensal familiar dos vestibulandos de escolas privadas está bem distribuída entre valores de R\\$1100,00 até R\\$13200,00. O mesmo não se vê para os de escolas públicas, onde a concentração está na renda de até R\\$1100,00, porém, encontramos ainda 7,36% dos vestibulandos com nenhuma renda familiar.
 
 ```python
 q008_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q008"].value_counts()
@@ -633,6 +641,8 @@ graph_q008.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
 
 ![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q008.png)
 
+Mesmo que apenas 18 de um total de 2961, representando 0.68% dos dados, ainda vemos residências de vestibulandos em que não há banheiro.
+
 ```python
 q009_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q009"].value_counts()
 label_pub = q009_pub.index
@@ -655,6 +665,8 @@ graph_q009.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
 
 ![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q009.png)
 
+50,4% das residências de vestibulandos de escolas públicas tem dois quartos. Ainda assim, encontramos 1,38% das mesmas com nenhum quarto.
+
 ```python
 q012_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q012"].value_counts()
 label_pub = q012_pub.index
@@ -676,6 +688,8 @@ graph_q012.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
 ```
 
 ![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q012.png)
+
+Para ambos vemos que a maioria percentual de vestibulandos possuem ao menos uma geladeira em sua residência. Ainda assim, um número relativamente grande (4,39%) dos vestibulandos de escolas públicas não possuem nenhuma.
 
 ```python
 q014_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q014"].value_counts()
@@ -743,6 +757,8 @@ graph_q022.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
 
 ![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q022.png)
 
+Se observarmos para a maior ocorrência de pessoas por residência de escolas privadas, vemos que em 37,7% moram 4 pessoas, olhando para o número de aparelhos celulares por residência, isso daria pelo menos um celular por pessoa. Na maioria das residências de vestibulandos de escolas públicas também residem 4 pessoas, porém, não se conta com mesma proporção de celulares por residente.
+
 ```python
 q024_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q024"].value_counts()
 label_pub = q024_pub.index
@@ -764,6 +780,8 @@ graph_q024.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
 ```
 
 ![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q024.png)
+
+Um item fundamental para qualquer estudante não está presente para 64,7% dos vestibulandos de escolas públicas. Enquanto que, para os de escolas privadas, 85,6% das residências possuem ao menos um aparelho.
 
 ```python
 q025_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q025"].value_counts()
