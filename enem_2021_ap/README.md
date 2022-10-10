@@ -1,5 +1,5 @@
 # Análise de Dados do ENEM 2021 no Amapá
-Estudo estatístico onde serão abordadas algumas variáveis sobre o ENEM 2021 no Estado do Amapá, fazendo comparação entre dados de alunos de escolas públicas e privadas.  
+Estudo estatístico onde serão abordadas algumas variáveis sobre o ENEM 2021 no Estado do Amapá, fazendo comparação entre dados de vestibulandos de escolas públicas e privadas.  
 Para esse estudo, será utilizado um dataset pré-tratado, relativo às provas do ENEM, realizadas no Amapá, que por sua vez, foi retirado dos [microdados](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem) do ENEM 2021.
 
 # Preparação, Organização e Estruturação dos Dados
