@@ -1,12 +1,13 @@
-Estudo estatístico onde serão abordadas algumas variáveis sobre o ENEM 2021 no Estado do Amapá.  
+# Análise de Dados do ENEM 2021 no Amapá
+Estudo estatístico onde serão abordadas algumas variáveis sobre o ENEM 2021 no Estado do Amapá, fazendo comparação entre dados de alunos de escolas públicas e privadas.  
 Para esse estudo, será utilizado um dataset pré-tratado, relativo às provas do ENEM, realizadas no Amapá, que por sua vez, foi retirado dos [microdados](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem) do ENEM 2021.
+
+# Preparação, Organização e Estruturação dos Dados
 ### Importando o pandas
 
 ```python
 import pandas as pd
 ```
-
-# Preparação, Organização e Estruturação dos Dados
 
 ```python
 pd.set_option("display.max_columns", 100)
@@ -38,38 +39,38 @@ df[["NOTA_CN",	"NOTA_CH",	"NOTA_LC",	"NOTA_MT", "NOTA_REDACAO", "TP_ESCOLA",
     "Q022",	"Q023",	"Q024",	"Q025"]].isnull().sum()
 ```
 
-> NOTA_CN      |  0  
-> NOTA_CH      |  0  
-> NOTA_LC      |  0  
-> NOTA_MT      |  0  
-> NOTA_REDACAO |  0  
-> TP_ESCOLA    |  0  
-> FAIXA_ETARIA |  0  
-> Q001         |  0  
-> Q002         |  0  
-> Q003         |  0  
-> Q004         |  0  
-> Q005         |  0  
-> Q006   |  0  
-> Q007   |  0  
-> Q008   |  0  
-> Q009   |  0  
-> Q010   |  0  
-> Q011   |  0  
-> Q012   |  0  
-> Q013   |  0  
-> Q014   |  0  
-> Q015   |  0  
-> Q016   |  0  
-> Q017   |  0  
-> Q018   |  0  
-> Q019   |  0  
-> Q020   |  0  
-> Q021   |  0  
-> Q022   |  0  
-> Q023   |  0  
-> Q024   |  0  
-> Q025   |  0  
+> NOTA_CN         0  
+> NOTA_CH         0  
+> NOTA_LC         0  
+> NOTA_MT         0  
+> NOTA_REDACAO    0  
+> TP_ESCOLA       0  
+> FAIXA_ETARIA    0  
+> Q001            0  
+> Q002            0  
+> Q003            0  
+> Q004            0  
+> Q005            0  
+> Q006      0  
+> Q007      0  
+> Q008      0  
+> Q009      0  
+> Q010      0  
+> Q011      0  
+> Q012      0  
+> Q013      0  
+> Q014      0  
+> Q015      0  
+> Q016      0  
+> Q017      0  
+> Q018      0  
+> Q019      0  
+> Q020      0  
+> Q021      0  
+> Q022      0  
+> Q023      0  
+> Q024      0  
+> Q025      0  
 > dtype: int64  
 
 Não há valores nulos para as principais variáveis em estudo.
@@ -89,11 +90,9 @@ df.TP_ESCOLA.value_counts()
 
 ```python
 esc_invalida = df[df.TP_ESCOLA == "nao_respondeu"].index
-
 df_estudo = df.copy().drop(esc_invalida)
 
 nota_final = ["NOTA_CN", "NOTA_CH",	"NOTA_LC",	"NOTA_MT", "NOTA_REDACAO"]
-
 df_estudo.insert(20, "NOTA_FINAL", df_estudo[nota_final].sum(axis=1) / 5)
 
 df_estudo.FAIXA_ETARIA = df_estudo.FAIXA_ETARIA.replace(
@@ -120,7 +119,9 @@ df_estudo.FAIXA_ETARIA = df_estudo.FAIXA_ETARIA.replace(
 )
 
 df_estudo.head()
+```
 
+```python
 df_estudo.shape
 ```
 
@@ -140,7 +141,6 @@ O total de vestibulandos de escolas públicas e privadas é de 3439. Desses, 296
 
 ```python
 esc_publica = df_estudo.copy().query("TP_ESCOLA == 'publica'").drop("TP_ESCOLA", axis=1)
-
 esc_publica.shape
 ```
 
@@ -150,7 +150,6 @@ esc_publica.shape
 
 ```python
 esc_privada = df_estudo.copy().query("TP_ESCOLA == 'privada'").drop("TP_ESCOLA", axis=1)
-
 esc_privada.shape
 ```
 
@@ -164,9 +163,7 @@ Frequências absoluta, percentual e percentual relativa da faixa etária de idad
 
 ```python
 abs_pub = pd.DataFrame.from_dict(esc_publica.FAIXA_ETARIA.value_counts()).rename(columns={"FAIXA_ETARIA": "ABSOLUTA"})
-
 rel_pub = pd.DataFrame.from_dict(round(abs_pub / abs_pub.sum(), 4)).rename(columns={"ABSOLUTA": "RELATIVA"})
-
 perc_pub = pd.DataFrame.from_dict(round(rel_pub * 100, 4)).rename(columns={"RELATIVA": "PERCENTUAL_RELATIVA"})
 
 df_freq_pub = pd.concat([abs_pub, rel_pub, perc_pub], axis=1)
@@ -196,9 +193,7 @@ Percebemos que a maior parte dos valores para as escolas públicas está concetr
 
 ```python
 abs_priv = pd.DataFrame.from_dict(esc_privada.FAIXA_ETARIA.value_counts()).rename(columns={"FAIXA_ETARIA": "ABSOLUTA"})
-
 rel_priv = pd.DataFrame.from_dict(round(abs_priv / abs_priv.sum(), 4)).rename(columns={"ABSOLUTA": "RELATIVA"})
-
 perc_priv = pd.DataFrame.from_dict(round(rel_priv * 100, 4)).rename(columns={"RELATIVA": "PERCENTUAL_RELATIVA"})
 
 df_freq_priv = pd.concat([abs_priv, rel_priv, perc_priv], axis=1)
@@ -232,6 +227,8 @@ graph_freq_notas = px.histogram(df_estudo, x="NOTA_FINAL", height=700,
 graph_freq_notas.update_layout(bargap=0)
 ```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_freq_notas.png)
+
 Percebemos que as notas das escolas públicas estão distribuidas assimétricamente à direita, enquanto que, as de escolas particulares, encontram-se mais uniformemente distribuídas. Ou seja, para as escolas públicas, quando o valor da nota aumenta, o número de ocorrências diminui.
 
 **Faixas Etárias:**  
@@ -242,12 +239,17 @@ fx_eta_pub = px.bar(df_freq_pub, x="ABSOLUTA", text_auto=True)
 fx_eta_pub.show()
 ```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/fx_eta_pub.png)
+
 ```python
 fx_eta_priv = px.bar(df_freq_priv, x="ABSOLUTA", text_auto=True)
 fx_eta_priv.show()
 ```
 
-A variabilidade de participantes vestibulandos em diferentes faixa etárias de escolas públicas é maior, em relação às escolas privadas. Além disso, tanto para escolas públicas, quanto para privadas, a maior ocorrência foram de alunos entre 18 e 17 anos.
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/fx_eta_priv.png)
+
+A variabilidade de participantes vestibulandos em diferentes faixa etárias de escolas públicas é maior, em relação às escolas privadas.  
+Além disso, tanto para escolas públicas, quanto para privadas, a maior ocorrência foram de alunos entre 18 e 17 anos.
 
 ## Medidas de Tendência Central  
 Média, moda e mediana das notas de escolas públicas e privadas.
@@ -293,8 +295,8 @@ round((mean_priv / mean_pub) * 100, 2)
 
 > 118.1
 
-Com isso, percebemos que as escolas apresentaram 3 modas cada.
-A partir da tabela, podemos concluir também que a média das notas finais das escolas privadas é 118,1% maior, em relação as das escolas públicas.
+A partir da tabela, podemos concluir que a média das notas finais das escolas privadas é 118,1% maior, em relação as das escolas públicas.  
+É possível notar também que, ambos os tipos de escolas apresentaram 3 modas cada.
 
 ## Medidas de dispersão ou variação
 Será verificado o grau de variação das notas finais com relação a média.
@@ -342,7 +344,8 @@ df_disp_var
 | ESCOLA_PUBLICA | 452.0 | 61.02 | 3722.66 | 48.43 |
 | ESCOLA_PRIVADA | 377.9 | 80.59 | 6481.31 | 65.79 |
 
-Olhando para o desvio padrão, percebemos que as notas das escolas privadas estão melhores distribuídas em torno da média. Além disso, a variância nos mostra que os dados das escola públicas estão mais condensados ao valor central.
+Olhando para o desvio padrão, percebemos que as notas das escolas privadas estão melhores distribuídas em torno da média.  
+Além disso, a variância nos mostra que os dados das escola públicas estão mais condensados em torno do valor central.
 
 ## Medidas de Posição
 
@@ -386,16 +389,19 @@ outliers_notas = px.box(data_frame=df_estudo, y="NOTA_FINAL",
 outliers_notas.show()
 ```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/outliers_notas.png)
+
 Há diversas ocorrências de dados discrepantes para as escolas públicas, enquanto que, para escolas privadas, o mesmo não acontece. Com isso, subentende-se que, as notas das escolas privadas encontram certa consistência entre si.
 
 ## Comparação Entre os Questionários dos Alunos de Escolas Públicas e Privadas
-
 Para esse módulo, será criado um novo dataset, apenas com as variáveis a serem visualizadas.
 
 ```python
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+```
 
+```python
 df_plot = df_estudo.copy()[["TP_ESCOLA", "Q001", "Q002", "Q003", "Q004", "Q005",
                             "Q006", "Q007", "Q008", "Q009", "Q010", "Q011",
                             "Q012", "Q013", "Q014", "Q015", "Q016", "Q017",
@@ -403,7 +409,7 @@ df_plot = df_estudo.copy()[["TP_ESCOLA", "Q001", "Q002", "Q003", "Q004", "Q005",
                             "Q024", "Q025"]]
 df_plot.head()
 ```
-#### Fazendo substituição dos valores nos registros.
+### Fazendo substituição dos valores nos registros
 
 ```python
 df_plot.Q001 = df_plot.Q001.replace(
@@ -499,7 +505,9 @@ df_plot.Q025 = df_plot.Q025.replace(
    "B":	"Sim"})
 
 df_plot.head()
+```
 
+```python
 quest = {"Q001": "Até que série seu pai, ou o homem responsável por você, estudou?",
          "Q002": "Até que série sua mãe, ou a mulher responsável por você, estudou?",
          "Q005": "Incluindo você, quantas pessoas moram atualmente em sua residência?",
@@ -534,7 +542,12 @@ graph_q001.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q001.update_layout(title_text=quest["Q001"])
 graph_q001.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q001.png)
 
+Para ambos os tipos de escolas, o que predomina são pais que completaram o ensino médio, mas não a faculdade. Os dados começam a ficar discrepantes quando se compara os que completaram a faculdade e a pós graduação, por exemplo.
+
+```python
 q002_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q002"].value_counts()
 label_pub = q002_pub.index
 value_pub = q002_pub.values
@@ -552,7 +565,13 @@ graph_q002.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q002.update_layout(title_text=quest["Q002"])
 graph_q002.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q002.png)
+
+Já para as mães, a maior concentração está na faixa dos 40%, porém, com valores totalmente diferentes. As de escolas públicas, completaram apenas o ensino médio, enquanto que as de escolas privadas, completaram a pós graduação.
+
+```python
 q005_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q005"].value_counts()
 label_pub = q005_pub.index
 value_pub = q005_pub.values
@@ -570,7 +589,13 @@ graph_q005.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q005.update_layout(title_text=quest["Q005"])
 graph_q005.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q005.png)
+
+Para ambos, a maioria reside em residências com total de habitantes entre 3 e 6 pessoas.
+
+```python
 q006_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q006"].value_counts()
 label_pub = q006_pub.index
 value_pub = q006_pub.values
@@ -588,7 +613,13 @@ graph_q006.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q006.update_layout(title_text=quest["Q006"])
 graph_q006.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q006.png)
+
+A renda mensal familiar dos vestibulandos de escolas privadas está bem distribuída entre valores de R\\$1100,00 até R\\$13200,00. O mesmo não se vê para os de escolas públicas, onde a concentração está na renda de até R\\$1100,00, porém, encontramos ainda 7,36% dos vestibulandos com nenhuma renda familiar.
+
+```python
 q008_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q008"].value_counts()
 label_pub = q008_pub.index
 value_pub = q008_pub.values
@@ -606,7 +637,13 @@ graph_q008.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q008.update_layout(title_text=quest["Q008"])
 graph_q008.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q008.png)
+
+Mesmo que apenas 18 de um total de 2961, representando 0.68% dos dados, ainda vemos residências de vestibulandos em que não há banheiro.
+
+```python
 q009_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q009"].value_counts()
 label_pub = q009_pub.index
 value_pub = q009_pub.values
@@ -624,7 +661,13 @@ graph_q009.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q009.update_layout(title_text=quest["Q009"])
 graph_q009.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q009.png)
+
+50,4% das residências de vestibulandos de escolas públicas tem dois quartos. Ainda assim, encontramos 1,38% das mesmas com nenhum quarto.
+
+```python
 q012_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q012"].value_counts()
 label_pub = q012_pub.index
 value_pub = q012_pub.values
@@ -642,7 +685,13 @@ graph_q012.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q012.update_layout(title_text=quest["Q012"])
 graph_q012.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q012.png)
+
+Para ambos vemos que a maioria percentual de vestibulandos possuem ao menos uma geladeira em sua residência. Ainda assim, um número relativamente grande (4,39%) dos vestibulandos de escolas públicas não possuem nenhuma.
+
+```python
 q014_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q014"].value_counts()
 label_pub = q014_pub.index
 value_pub = q014_pub.values
@@ -660,7 +709,11 @@ graph_q014.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q014.update_layout(title_text=quest["Q014"])
 graph_q014.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q014.png)
+
+```python
 q019_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q019"].value_counts()
 label_pub = q019_pub.index
 value_pub = q019_pub.values
@@ -678,7 +731,11 @@ graph_q019.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q019.update_layout(title_text=quest["Q019"])
 graph_q019.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q019.png)
+
+```python
 q022_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q022"].value_counts()
 label_pub = q022_pub.index
 value_pub = q022_pub.values
@@ -696,7 +753,13 @@ graph_q022.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q022.update_layout(title_text=quest["Q022"])
 graph_q022.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q022.png)
+
+Se observarmos para a maior ocorrência de pessoas por residência de escolas privadas, vemos que em 37,7% moram 4 pessoas, olhando para o número de aparelhos celulares por residência, isso daria pelo menos um celular por pessoa. Na maioria das residências de vestibulandos de escolas públicas também residem 4 pessoas, porém, não se conta com mesma proporção de celulares por residente.
+
+```python
 q024_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q024"].value_counts()
 label_pub = q024_pub.index
 value_pub = q024_pub.values
@@ -714,7 +777,13 @@ graph_q024.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 
 graph_q024.update_layout(title_text=quest["Q024"])
 graph_q024.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
+```
 
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q024.png)
+
+Um item fundamental para qualquer estudante não está presente para 64,7% dos vestibulandos de escolas públicas. Enquanto que, para os de escolas privadas, 85,6% das residências possuem ao menos um aparelho.
+
+```python
 q025_pub = df_plot.query("TP_ESCOLA == 'publica'")["Q025"].value_counts()
 label_pub = q025_pub.index
 value_pub = q025_pub.values
@@ -733,3 +802,5 @@ graph_q025.add_trace(go.Pie(labels=label_priv, values=value_priv), 1, 2)
 graph_q025.update_layout(title_text=quest["Q025"])
 graph_q025.update_layout(uniformtext_minsize=14, uniformtext_mode='hide')
 ```
+
+![](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap/resources/images/graph_q025.png)
