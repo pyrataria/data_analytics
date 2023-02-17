@@ -1,6 +1,6 @@
 Projeto de análise descritiva, sobre o preço da gasolina comum no ano de 2022, nos postos Automoto - Automóveis do Amapá, com base em 12 conjuntos de dados, disponível na "[Série Histórica de Preços de Combustíveis](https://dados.gov.br/dados/conjuntos-dados/serie-historica-de-precos-de-combustiveis-por-revenda)", do Portal de Dados Abertos do governo.
 
-# IDENTIFICAÇÃO DA POPULAÇÃO DO ESTUDO E DAS VARIÁVEIS DE INTERESSE.
+# IDENTIFICAÇÃO DA POPULAÇÃO DO ESTUDO E DAS VARIÁVEIS DE INTERESSE
 A população de estudo será dada com base nos dados dos postos Automoto no estado do Amapá.
 
 ## Manipulação de Dados
@@ -102,10 +102,10 @@ df_ap.rename(columns=ajuste_variavel, inplace=True)
 ```python
 df_ap.columns
 ```
-> Index(['SIGLA_REGIAO', 'SIGLA_ESTADO', 'MUNICIPIO', 'REVENDA',
->       'CNPJ_DA_REVENDA', 'NOME_DA_RUA', 'NUMERO_RUA', 'COMPLEMENTO', 'BAIRRO',
->       'CEP', 'PRODUTO', 'DATA_DA_COLETA', 'VALOR_DE_VENDA', 'VALOR_DE_COMPRA',
->       'UNIDADE_DE_MEDIDA', 'BANDEIRA'],
+> Index(['SIGLA_REGIAO', 'SIGLA_ESTADO', 'MUNICIPIO', 'REVENDA',  
+>       'CNPJ_DA_REVENDA', 'NOME_DA_RUA', 'NUMERO_RUA', 'COMPLEMENTO', 'BAIRRO',  
+>       'CEP', 'PRODUTO', 'DATA_DA_COLETA', 'VALOR_DE_VENDA', 'VALOR_DE_COMPRA',  
+>       'UNIDADE_DE_MEDIDA', 'BANDEIRA'],  
 >      dtype='object')
 
 #### Renomeando registros
@@ -132,22 +132,22 @@ df_ap.head()
 ```python
 df_ap.dtypes
 ```
-> SIGLA_REGIAO          object
-> SIGLA_ESTADO          object
-> MUNICIPIO             object
-> REVENDA               object
-> CNPJ_DA_REVENDA       object
-> NOME_DA_RUA           object
-> NUMERO_RUA            object
-> COMPLEMENTO           object
-> BAIRRO                object
-> CEP                   object
-> PRODUTO               object
-> DATA_DA_COLETA        object
-> VALOR_DE_VENDA        object
-> VALOR_DE_COMPRA      float64
-> UNIDADE_DE_MEDIDA     object
-> BANDEIRA              object
+> SIGLA_REGIAO          object  
+> SIGLA_ESTADO          object  
+> MUNICIPIO             object  
+> REVENDA               object  
+> CNPJ_DA_REVENDA       object  
+> NOME_DA_RUA           object  
+> NUMERO_RUA            object  
+> COMPLEMENTO           object  
+> BAIRRO                object  
+> CEP                   object  
+> PRODUTO               object  
+> DATA_DA_COLETA        object  
+> VALOR_DE_VENDA        object  
+> VALOR_DE_COMPRA      float64  
+> UNIDADE_DE_MEDIDA     object  
+> BANDEIRA              object  
 > dtype: object
 
 #### Estratificação da população
@@ -156,39 +156,39 @@ A população será estratificada com base na gasolina do tipo comum e na revend
 ```python
 df_ap.PRODUTO.value_counts()
 ```
-> Gasolina              1163
-> Gasolina Aditivada     183
-> Etanol                  45
+> Gasolina              1163  
+> Gasolina Aditivada     183  
+> Etanol                  45  
 > Name: PRODUTO, dtype: int64
 
 ```python
 df_ap.REVENDA.value_counts()
 ```
-> Automoto - Automoveis Do Amapa Ltda          331
-> Automoto Combustiveis Do Amapa Ltda          193
-> Sepe Tiaraju Empreendimentos Eireli          115
-> Comercial Grao De Ouro Ltda                  106
-> Posto De Combustiveis Jardins Eireli         102
-> Claudionor Costa Dos Santos                   83
-> Posto Iccar Ltda                              70
-> Grampos Oiapoc Ltda                           64
-> Real Petróleo Ltda                            63
-> J C Da S Farias Eireli                        62
-> Auto Posto Machado Ltda                       62
-> Auto Posto Terceiro Milênio Ltda              38
-> Souza & Cavalcante Comercio Ltda              24
-> Monte & Filhos Ltda                           21
-> Aeroposto Combustiveis Automotivos Ltda       18
-> J. C. S. Guimaraes Ltda                       14
-> Posto Catarinao Eireli                        10
-> Auto Posto Playcenter Ltda                     4
-> Machado & Andrade Ltda                         3
-> Auto Posto Amazonas Stn Ltda                   2
-> R E R Empreendimentos Eireli                   2
-> C G Andrade Nonato                             1
-> Posto Colonial Norte Ltda                      1
-> Postos Gabriel Ii Ltda                         1
-> Concessionaria Rocha Empreendimentos Ltda      1
+> Automoto - Automoveis Do Amapa Ltda          331  
+> Automoto Combustiveis Do Amapa Ltda          193  
+> Sepe Tiaraju Empreendimentos Eireli          115  
+> Comercial Grao De Ouro Ltda                  106  
+> Posto De Combustiveis Jardins Eireli         102  
+> Claudionor Costa Dos Santos                   83  
+> Posto Iccar Ltda                              70  
+> Grampos Oiapoc Ltda                           64  
+> Real Petróleo Ltda                            63  
+> J C Da S Farias Eireli                        62  
+> Auto Posto Machado Ltda                       62  
+> Auto Posto Terceiro Milênio Ltda              38  
+> Souza & Cavalcante Comercio Ltda              24  
+> Monte & Filhos Ltda                           21  
+> Aeroposto Combustiveis Automotivos Ltda       18  
+> J. C. S. Guimaraes Ltda                       14  
+> Posto Catarinao Eireli                        10  
+> Auto Posto Playcenter Ltda                     4  
+> Machado & Andrade Ltda                         3  
+> Auto Posto Amazonas Stn Ltda                   2  
+> R E R Empreendimentos Eireli                   2  
+> C G Andrade Nonato                             1  
+> Posto Colonial Norte Ltda                      1  
+> Postos Gabriel Ii Ltda                         1  
+> Concessionaria Rocha Empreendimentos Ltda      1  
 > Name: REVENDA, dtype: int64
 
 A revenda com maior ocorrência de dados é a Automoto - Automoveis Do Amapa Ltda.
@@ -204,7 +204,7 @@ Verificando se há registros vazios na variável VALOR_DE_VENDA.
 ```python
 automoto_atmv.VALOR_DE_VENDA.isnull().value_counts()
 ```
-> False    330
+> False    330  
 > Name: VALOR_DE_VENDA, dtype: int64
 
 Serão removidas variáveis que não serão utilizadas nos estudos.
@@ -212,19 +212,19 @@ Serão removidas variáveis que não serão utilizadas nos estudos.
 ```python
 automoto_atmv.SIGLA_REGIAO.value_counts()
 ```
-> N    330
+> N    330  
 Name: SIGLA_REGIAO, dtype: int64
 
 ```python
 automoto_atmv.SIGLA_ESTADO.value_counts()
 ```
-> Ap    330
+> Ap    330  
 > Name: SIGLA_ESTADO, dtype: int64
 
 ```python
 automoto_atmv.VALOR_DE_COMPRA.isnull().value_counts()
 ```
-> True    330
+> True    330  
 > Name: VALOR_DE_COMPRA, dtype: int64
 
 ```python
@@ -257,16 +257,16 @@ A população a ser utilizada no estudo contemplará os 4 bairros com maior quan
 ```python
 automoto_atmv.BAIRRO.value_counts()
 ```
-> Central           103
-> Pacoval            47
-> Santa Rita         40
-> Buritizal          39
-> Trem               28
-> Novo Horizonte     22
-> Infraero           21
-> Congos             12
-> Novo Buritizal     11
-> Sao Jose            7
+> Central           103  
+> Pacoval            47  
+> Santa Rita         40  
+> Buritizal          39  
+> Trem               28  
+> Novo Horizonte     22  
+> Infraero           21  
+> Congos             12  
+> Novo Buritizal     11  
+> Sao Jose            7  
 
 ```python
 bairros = list(automoto_atmv.BAIRRO.value_counts().index)[:4]
