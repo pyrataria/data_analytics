@@ -1,6 +1,6 @@
 Conjunto de dados com de mais de 1.000 registros, contendo informações sobre produtos relativos ao e-commerce da empresa Amazon. O mesmo é proveniente de terceiros, adquirido por meio da plataforma Kaggle.  
 
-**Sobre o projeto**
+**Sobre o projeto**  
 A empresa Amazon.com, Inc. é uma empresa multinacional de tecnologia norte-americana com sede em Seattle, Washington. A companhia trabalha na área do e-commerce, computação em nuvem, streaming e inteligência artificial.
 Neste projeto, ao discorrer sobre dados inerentes ao e-commerce da empresa, o observador terá esclarecimento acerca de algumas questões, relativas a compras no âmbito de loja virtual da Amazon. Ao final, serão respondidas algumas perguntas de negócio.
 
