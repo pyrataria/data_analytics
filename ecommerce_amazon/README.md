@@ -1,4 +1,5 @@
-Conjunto de dados com de mais de 1.000 registros, contendo informações sobre produtos relativos ao e-commerce da empresa Amazon. O mesmo é proveniente de terceiros, adquirido por meio da plataforma Kaggle.
+Conjunto de dados com de mais de 1.000 registros, contendo informações sobre produtos relativos ao e-commerce da empresa Amazon. O mesmo é proveniente de terceiros, adquirido por meio da plataforma Kaggle.  
+
 **Sobre o projeto**
 A empresa Amazon.com, Inc. é uma empresa multinacional de tecnologia norte-americana com sede em Seattle, Washington. A companhia trabalha na área do e-commerce, computação em nuvem, streaming e inteligência artificial.
 Neste projeto, ao discorrer sobre dados inerentes ao e-commerce da empresa, o observador terá esclarecimento acerca de algumas questões, relativas a compras no âmbito de loja virtual da Amazon. Ao final, serão respondidas algumas perguntas de negócio.
@@ -380,7 +381,8 @@ As seguintes perguntas de negócio serão respondidas:
 * Qual a chance de um produto da categoria Computers&Accessories não ter mais de 50% de desconto?
 * Adquirindo um produto da categoria Electronics que custa mais ou ₹1000 (mil rúpias), qual a probabilidade de ele possuir mais de 60% de desconto?
 * Ao se comprar 10 produtos da categoria Computers&Accessories, qual a chance de pelo menos um possuir um desconto maior ou igual a 80%?
-* Comprando-se 5 produtos da categoria Electronics, qual a probabilidade de nenhum possuir um desconto superior ou igual a 50%?
+* Comprando-se 5 produtos da categoria Electronics, qual a probabilidade de nenhum possuir um desconto superior ou igual a 50%?  
+
 **1) Qual a probabilidade de um item da categoria OfficeProducts possuir pelo menos 20% de desconto?**
 
 ```python
