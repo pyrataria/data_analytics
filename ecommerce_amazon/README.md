@@ -381,9 +381,9 @@ As seguintes perguntas de negócio serão respondidas:
 * Qual a chance de um produto da categoria Computers&Accessories não ter mais de 50% de desconto?
 * Adquirindo um produto da categoria Electronics que custa mais ou ₹1000 (mil rúpias), qual a probabilidade de ele possuir mais de 60% de desconto?
 * Ao se comprar 10 produtos da categoria Computers&Accessories, qual a chance de pelo menos um possuir um desconto maior ou igual a 80%?
-* Comprando-se 5 produtos da categoria Electronics, qual a probabilidade de nenhum possuir um desconto superior ou igual a 50%?  
+* Ao se comprar 5 produtos da categoria Electronics, qual a probabilidade de nenhum possuir um desconto superior ou igual a 50%?  
 
-**1) Qual a probabilidade de um item da categoria OfficeProducts possuir pelo menos 20% de desconto?**
+**1) Um item da categoria OfficeProducts tem quantos por cento de chance de possuir mais de 20% de desconto?**
 
 ```python
 prob = lambda A, E: round((A / E) * 100, 2) if A < E else False
@@ -456,7 +456,7 @@ round((1 - binom.pmf(0, 10, p4)) * 100, 2)
 
 A probabilidade de pelo menos um produto da categoria Computers&Accessories possuir um desconto maior que 70% é de 62,2%.  
 
-**5) Comprando-se 5 produtos da categoria Electronics, qual a probabilidade de nenhum possuir um desconto superior ou igual a 50%?**  
+**5) Ao se comprar 5 produtos da categoria Electronics, qual a probabilidade de nenhum possuir um desconto superior ou igual a 50%?**  
 
 Para esta operação utilizaremos a função geom.pmf da biblioteca scipy, porém, será feito um pequeno ajuste, para ela retorna em forma de porcentagem arredondada.  
 
