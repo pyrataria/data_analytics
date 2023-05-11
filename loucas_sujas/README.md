@@ -12,7 +12,7 @@ import pandas as pd
 ```
 
 ```python
-df = pd.read_csv("/content/drive/MyDrive/projetos/loucas_abril/loucas_abril.csv")
+df = pd.read_csv("https://drive.google.com/uc?id=1uNPUMANzPrH4FSCo0odg5M-CgIgdyg24&export=download")
 df.head()
 ```
 ![](https://github.com/pyrataria/data_analytics/blob/main/loucas_sujas/resources/images/img01.png)
@@ -45,17 +45,17 @@ Primeiramento, será verificado se existem valores ausentes no dataframe.
 df.isnull().sum()
 ```
 
-> TALHER          0
-> PRATO           0
-> TIGELA          0
-> COPO            0
-> XICARA          0
-> VASILHA-POTE    0
-> TAMPA           0
-> PANELA          0
-> OUTRO           0
-> DIA_SEM         0
-> dtype: int64
+> TALHER          0  
+> PRATO           0  
+> TIGELA          0  
+> COPO            0  
+> XICARA          0  
+> VASILHA-POTE    0  
+> TAMPA           0  
+> PANELA          0  
+> OUTRO           0  
+> DIA_SEM         0  
+> dtype: int64  
 
 Com isso, percebe-se que não existem valores faltantes.  
 
@@ -65,17 +65,17 @@ Com isso, percebe-se que não existem valores faltantes.
 ```python
 df.dtypes
 ```
-> TALHER           int64
-> PRATO            int64
-> TIGELA           int64
-> COPO             int64
-> XICARA           int64
-> VASILHA-POTE     int64
-> TAMPA            int64
-> PANELA           int64
-> OUTRO            int64
-> DIA_SEM         object
-> dtype: object
+> TALHER           int64  
+> PRATO            int64  
+> TIGELA           int64  
+> COPO             int64  
+> XICARA           int64  
+> VASILHA-POTE     int64  
+> TAMPA            int64  
+> PANELA           int64  
+> OUTRO            int64  
+> DIA_SEM         object  
+> dtype: object  
 
 Olhando para o conjunto de dados, vê-se que as variáveis numéricas são do tipo inteiro, portanto não se faz necessário nenhum tipo de mudança no tipo dos dados.  
 # ESTATÍTISCA DESCRITIVA
