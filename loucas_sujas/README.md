@@ -134,8 +134,8 @@ labels = df2["FREQ_ABS"][:-1].index # nome dos setores
 values = df2["FREQ_ABS"][:-1].values # valor dos setores
 ```
 
-# valores que se destacarão no gráfico
 ```python
+# valores que se destacarão no gráfico
 index_max = values.max()
 index_min = values.min()
 ```
