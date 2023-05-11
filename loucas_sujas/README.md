@@ -234,7 +234,7 @@ dist_loucas_cat = go.Figure()
 
 for i, categoria in enumerate(categorias):
     freq_abs = [df3[categoria][dia] for dia in dias]
-    dist_loucas_sem.add_trace(go.Bar(x=dias, y=freq_abs, name=categoria,
+    dist_loucas_cat.add_trace(go.Bar(x=dias, y=freq_abs, name=categoria,
                                      marker_color=tema[i]))
 
 dist_loucas_cat.update_layout(title=dict(text="TOTAL DE LOUÇAS LAVADAS POR DIA\
@@ -248,7 +248,7 @@ DA SEMANA EM CATEGORIAS",
                                           font=dict(size=14)),
                               plot_bgcolor="rgb(245, 245, 245)")
 ```
-
+![](https://github.com/pyrataria/data_analytics/blob/main/loucas_sujas/resources/images/dist_loucas_cat.png)
 
 Com isso, fica ainda mais evidente que a categoria TAHLHER sempre se destaca das demais em quantidade.  
 
@@ -295,6 +295,7 @@ dist_med_loucas.update_xaxes(showline=True, linewidth=1, linecolor="lightgrey",
 
 dist_med_loucas.update_yaxes(showline=True, linewidth=1, linecolor="lightgrey")
 ```
+![](https://github.com/pyrataria/data_analytics/blob/main/loucas_sujas/resources/images/dist_med_loucas.png)
 
 É possível notar que o gráfico da média se assemelha bastante ao de frequência absoluta, com isso, podemos inferir que não há outliers (valores discrepantes) nos dados.  
 
