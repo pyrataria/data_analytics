@@ -49,42 +49,42 @@ O dataset possui um total de 9999 registros e 35 variáveis.
 df.dtypes
 ```
 
-> Track URI                object
-> Track Name               object
-> Artist URI(s)            object
-> Artist Name(s)           object
-> Album URI                object
-> Album Name               object
-> Album Artist URI(s)      object
-> Album Artist Name(s)     object
-> Album Release Date       object
-> Album Image URL          object
-> Disc Number               int64
-> Track Number              int64
-> Track Duration (ms)       int64
-> Track Preview URL        object
-> Explicit                   bool
-> Popularity                int64
-> ISRC                     object
-> Added By                 object
-> Added At                 object
-> Artist Genres            object
-> Danceability            float64
-> Energy                  float64
-> Key                     float64
-> Loudness                float64
-> Mode                    float64
-> Speechiness             float64
-> Acousticness            float64
-> Instrumentalness        float64
-> Liveness                float64
-> Valence                 float64
-> Tempo                   float64
-> Time Signature          float64
-> Album Genres            float64
-> Label                    object
-> Copyrights               object
-> dtype: object
+> Track URI                object  
+> Track Name               object  
+> Artist URI(s)            object  
+> Artist Name(s)           object  
+> Album URI                object  
+> Album Name               object  
+> Album Artist URI(s)      object  
+> Album Artist Name(s)     object  
+> Album Release Date       object  
+> Album Image URL          object  
+> Disc Number               int64  
+> Track Number              int64  
+> Track Duration (ms)       int64  
+> Track Preview URL        object  
+> Explicit                   bool  
+> Popularity                int64  
+> ISRC                     object  
+> Added By                 object  
+> Added At                 object  
+> Artist Genres            object  
+> Danceability            float64  
+> Energy                  float64  
+> Key                     float64  
+> Loudness                float64  
+> Mode                    float64  
+> Speechiness             float64  
+> Acousticness            float64  
+> Instrumentalness        float64  
+> Liveness                float64  
+> Valence                 float64  
+> Tempo                   float64  
+> Time Signature          float64  
+> Album Genres            float64  
+> Label                    object  
+> Copyrights               object  
+> dtype: object  
 
 O tipo dos dados está no padrão para correto, portanto, não será necessária nenhuma alteração.
 ## Extração e limpeza de dados
@@ -94,42 +94,42 @@ O tipo dos dados está no padrão para correto, portanto, não será necessária
 df.isnull().sum()
 ```
 
-> Track URI                  0
-> Track Name                 1
-> Artist URI(s)              2
-> Artist Name(s)             1
-> Album URI                  2
-> Album Name                 1
-> Album Artist URI(s)        2
-> Album Artist Name(s)       2
-> Album Release Date         2
-> Album Image URL            4
-> Disc Number                0
-> Track Number               0
-> Track Duration (ms)        0
-> Track Preview URL       2897
-> Explicit                   0
-> Popularity                 0
-> ISRC                       3
-> Added By                   0
-> Added At                   0
-> Artist Genres            550
-> Danceability               2
-> Energy                     2
-> Key                        2
-> Loudness                   2
-> Mode                       2
-> Speechiness                2
-> Acousticness               2
-> Instrumentalness           2
-> Liveness                   2
-> Valence                    2
-> Tempo                      2
-> Time Signature             2
-> Album Genres            9999
-> Label                      6
-> Copyrights                24
-> dtype: int64
+> Track URI                  0  
+> Track Name                 1  
+> Artist URI(s)              2  
+> Artist Name(s)             1  
+> Album URI                  2  
+> Album Name                 1  
+> Album Artist URI(s)        2  
+> Album Artist Name(s)       2  
+> Album Release Date         2  
+> Album Image URL            4  
+> Disc Number                0  
+> Track Number               0  
+> Track Duration (ms)        0  
+> Track Preview URL       2897  
+> Explicit                   0  
+> Popularity                 0  
+> ISRC                       3  
+> Added By                   0  
+> Added At                   0  
+> Artist Genres            550  
+> Danceability               2  
+> Energy                     2  
+> Key                        2  
+> Loudness                   2  
+> Mode                       2  
+> Speechiness                2  
+> Acousticness               2  
+> Instrumentalness           2  
+> Liveness                   2  
+> Valence                    2  
+> Tempo                      2  
+> Time Signature             2  
+> Album Genres            9999  
+> Label                      6  
+> Copyrights                24  
+> dtype: int64  
 
 <u>Removendo variáveis e registros</u>  
 A variável *Album Genres* possui apenas valores nulos, assim, se torna inútil aos estudos, portanto, deve ser excluída. As demais variáveis, também não serão necessárias à estatística descritiva.
@@ -170,30 +170,30 @@ Com isso, alguns registros foram removidos.
 df.isnull().sum()
 ```
 
-> Track Name                0
-> Artist Name(s)            0
-> Album Name                0
-> Album Artist Name(s)      0
-> Album Release Date        0
-> Track Duration (ms)       0
-> Explicit                  0
-> Popularity                0
-> ISRC                      0
-> Artist Genres           547
-> Danceability              0
-> Energy                    0
-> Key                       0
-> Loudness                  0
-> Mode                      0
-> Speechiness               0
-> Acousticness              0
-> Instrumentalness          0
-> Liveness                  0
-> Valence                   0
-> Tempo                     0
-> Time Signature            0
-> Label                     0
-> dtype: int64
+> Track Name                0  
+> Artist Name(s)            0  
+> Album Name                0  
+> Album Artist Name(s)      0  
+> Album Release Date        0  
+> Track Duration (ms)       0  
+> Explicit                  0  
+> Popularity                0  
+> ISRC                      0  
+> Artist Genres           547  
+> Danceability              0  
+> Energy                    0  
+> Key                       0  
+> Loudness                  0  
+> Mode                      0  
+> Speechiness               0  
+> Acousticness              0  
+> Instrumentalness          0  
+> Liveness                  0  
+> Valence                   0  
+> Tempo                     0  
+> Time Signature            0  
+> Label                     0  
+> dtype: int64  
 
 Observando a tabela, se percebe que na coluna de gêneros artísticos há valores nulo, porém, não será removida.
 # ESTATÍSTICA DESCRITIVA
