@@ -41,18 +41,18 @@ Também é importante verificar o tipo dos dados.
 df.dtypes
 ```
 
-> Company nbsp         object
-> File nbsp No.         int64
-> Opened nbsp          object
-> Closed nbsp          object
-> Coverage nbsp        object
-> SubCoverage nbsp     object
-> Reason nbsp          object
-> SubReason nbsp       object
-> Disposition nbsp     object
-> Conclusion nbsp      object
-> Recovery nbsp       float64
-> Status nbsp          object
+> Company         object  
+> File No.         int64  
+> Opened          object  
+> Closed          object  
+> Coverage        object  
+> SubCoverage     object  
+> Reason          object  
+> SubReason       object  
+> Disposition     object  
+> Conclusion      object  
+> Recovery       float64  
+> Status          object  
 > dtype: object
 
 As variáveis Opened e Closed devem ser modificadas para o tipo *datetime*.
@@ -68,18 +68,18 @@ Para a remoção de dados, primeiramente, será verificado valores nulos.
 ```python
 df.isnull().sum()
 ```
-> Company nbsp            0
-> File No. nbsp           0
-> Opened nbsp             0
-> Closed nbsp           963
-> Coverage nbsp        2440
-> SubCoverage nbsp     8960
-> Reason nbsp          2617
-> SubReason nbsp       2617
-> Disposition nbsp    15288
-> Conclusion nbsp     17094
-> Recovery nbsp           0
-> Status nbsp             0
+> Company            0  
+> File No.           0  
+> Opened             0  
+> Closed           963  
+> Coverage        2440  
+> SubCoverage     8960  
+> Reason          2617  
+> SubReason       2617  
+> Disposition    15288  
+> Conclusion     17094  
+> Recovery           0  
+> Status             0  
 > dtype: int64
 
 Há variáveis com valores nulos, porém, apenas algumas são de suma importância para o projeto e, estas devem ser removidas.
@@ -106,18 +106,18 @@ df.reset_index(drop=True, inplace=True)
 ```python
 df.nunique()
 ```
-> Company nbsp          755
-> File No. nbsp       20029
-> Opened nbsp          1593
-> Closed nbsp          1377
-> Coverage nbsp          53
-> SubCoverage nbsp      101
-> Reason nbsp             4
-> SubReason nbsp        177
-> Disposition nbsp       13
-> Conclusion nbsp        52
-> Recovery nbsp        2742
-> Status nbsp             9
+> Company          755  
+> File No.       20029  
+> Opened          1593  
+> Closed          1377  
+> Coverage          53  
+> SubCoverage      101  
+> Reason             4  
+> SubReason        177  
+> Disposition       13  
+> Conclusion        52  
+> Recovery        2742  
+> Status             9  
 > dtype: int64
 
 Olhando para a exclusividade em cada variável, é possível ter um ponto de partida para a descrição dos dados.  
@@ -207,11 +207,11 @@ Observando a distribuição, fica evidente a discrepância acerca do principal m
 ```python
 df[df.Reason == "Claim Handling"].SubReason.value_counts()[:5]
 ```
-> Claim Denial nbsp                       4501
-> Claim Delay nbsp                        3837
-> Unsatisfactory Settlement/Offer nbsp    3250
-> Claim Procedure nbsp                    1701
-> Medical Necessity Denial nbsp           1307
+> Claim Denial                       4501  
+> Claim Delay                        3837  
+> Unsatisfactory Settlement/Offer    3250  
+> Claim Procedure                    1701  
+> Medical Necessity Denial           1307  
 Name: SubReason, dtype: int64
 
 <u>**Atendimento ao Titular da Apólice (PolicyHolder Service)**</u>  
@@ -220,11 +220,11 @@ Engloba todos os aspectos de comunicação e assistência fornecidos aos cliente
 ```python
 df[df.Reason == "PolicyHolder Service"].SubReason.value_counts()[:5]
 ```
-> Premium Notice/Billing nbsp              1012
-> Delays/No Response nbsp                   712
-> Unsatisfactory Refund of Premium nbsp     432
-> Premium/Notice nbsp                       312
-> Premium Refund Delay nbsp                 159
+> Premium Notice/Billing              1012  
+> Delays/No Response                   712  
+> Unsatisfactory Refund of Premium     432  
+> Premium/Notice                       312  
+> Premium Refund Delay                 159  
 > Name: SubReason, dtype: int64
 
 <u>**Subscrição (Underwriting)**</u>  
@@ -233,11 +233,11 @@ Processo pelo qual a seguradora avalia o risco de cobrir um cliente em potencial
 ```python
 df[df.Reason == "Underwriting"].SubReason.value_counts()[:5]
 ```
-> Premium & Rating nbsp         1544
-> Cancellation nbsp              669
-> Nonrenewal nbsp                496
-> Premium/Rate Increase nbsp     288
-> No Subreason nbsp              153
+> Premium & Rating         1544  
+> Cancellation              669  
+> Nonrenewal                496  
+> Premium/Rate Increase     288  
+> No Subreason              153  
 > Name: SubReason, dtype: int64
 
 <u>**Marketing & Vendas (Marketing & Sales)**</u>  
@@ -246,11 +246,11 @@ Responsável por promover os produtos e serviços da seguradora, bem como atrair
 ```python
 df[df.Reason == "Marketing & Sales"].SubReason.value_counts()[:5]
 ```
-> High Pressure Tactics nbsp          241
-> Misrepresentation nbsp              185
-> Misappropriation of Premium nbsp    163
-> No Coverage/Premium Paid nbsp       144
-> Misleading Advertising nbsp          71
+> High Pressure Tactics          241  
+> Misrepresentation              185  
+> Misappropriation of Premium    163  
+> No Coverage/Premium Paid       144  
+> Misleading Advertising          71  
 > Name: SubReason, dtype: int64
 
 ### Cobertura de seguro x Motivo de reclamação
