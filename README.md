@@ -9,3 +9,4 @@ Os projetos aqui apresentados, são frutos de meu aprendizado em **Análise de D
 * **E-commerce Amazon**: [Github](https://github.com/pyrataria/data_analytics/blob/main/ecommerce_amazon) | [Kaggle](https://www.kaggle.com/code/adelinoalmeida/ecommerce-amazon)
 * **Louças sujas**: [Github](https://github.com/pyrataria/data_analytics/blob/main/loucas_sujas) | [Kaggle](https://www.kaggle.com/code/adelinoalmeida/loucas-sujas)
 * **Análise Musical - Spotify**: [Github](https://github.com/pyrataria/data_analytics/blob/main/spotipy) | [Kaggle](https://www.kaggle.com/code/adelinoalmeida/spotipy)
+* **Análise de Reclamações**: [Github](https://github.com/pyrataria/data_analytics/blob/main/analise_reclamacoes) | [Kaggle](https://www.kaggle.com/code/adelinoalmeida/analise-reclamacoes)
