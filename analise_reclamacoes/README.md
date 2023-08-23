@@ -27,6 +27,7 @@ import pandas as pd
 df = pd.read_csv("/content/drive/MyDrive/programacao/datasets/reclamacoes_seguradoras/iccrsr.csv")
 df.head()
 ```
+![](https://github.com/pyrataria/data_analytics/blob/main/analise_reclamacoes/resources/images/img00.png)
 
 Primeiramente, será verificado a quantidade de variáveis e registros contidos no dataset.
 
@@ -41,18 +42,18 @@ Também é importante verificar o tipo dos dados.
 df.dtypes
 ```
 
-> Company nbsp         object
-> File nbsp No.         int64
-> Opened nbsp          object
-> Closed nbsp          object
-> Coverage nbsp        object
-> SubCoverage nbsp     object
-> Reason nbsp          object
-> SubReason nbsp       object
-> Disposition nbsp     object
-> Conclusion nbsp      object
-> Recovery nbsp       float64
-> Status nbsp          object
+> Company         object  
+> File No.         int64  
+> Opened          object  
+> Closed          object  
+> Coverage        object  
+> SubCoverage     object  
+> Reason          object  
+> SubReason       object  
+> Disposition     object  
+> Conclusion      object  
+> Recovery       float64  
+> Status          object  
 > dtype: object
 
 As variáveis Opened e Closed devem ser modificadas para o tipo *datetime*.
@@ -68,18 +69,18 @@ Para a remoção de dados, primeiramente, será verificado valores nulos.
 ```python
 df.isnull().sum()
 ```
-> Company nbsp            0
-> File No. nbsp           0
-> Opened nbsp             0
-> Closed nbsp           963
-> Coverage nbsp        2440
-> SubCoverage nbsp     8960
-> Reason nbsp          2617
-> SubReason nbsp       2617
-> Disposition nbsp    15288
-> Conclusion nbsp     17094
-> Recovery nbsp           0
-> Status nbsp             0
+> Company            0  
+> File No.           0  
+> Opened             0  
+> Closed           963  
+> Coverage        2440  
+> SubCoverage     8960  
+> Reason          2617  
+> SubReason       2617  
+> Disposition    15288  
+> Conclusion     17094  
+> Recovery           0  
+> Status             0  
 > dtype: int64
 
 Há variáveis com valores nulos, porém, apenas algumas são de suma importância para o projeto e, estas devem ser removidas.
@@ -106,18 +107,18 @@ df.reset_index(drop=True, inplace=True)
 ```python
 df.nunique()
 ```
-> Company nbsp          755
-> File No. nbsp       20029
-> Opened nbsp          1593
-> Closed nbsp          1377
-> Coverage nbsp          53
-> SubCoverage nbsp      101
-> Reason nbsp             4
-> SubReason nbsp        177
-> Disposition nbsp       13
-> Conclusion nbsp        52
-> Recovery nbsp        2742
-> Status nbsp             9
+> Company          755  
+> File No.       20029  
+> Opened          1593  
+> Closed          1377  
+> Coverage          53  
+> SubCoverage      101  
+> Reason             4  
+> SubReason        177  
+> Disposition       13  
+> Conclusion        52  
+> Recovery        2742  
+> Status             9  
 > dtype: int64
 
 Olhando para a exclusividade em cada variável, é possível ter um ponto de partida para a descrição dos dados.  
@@ -133,7 +134,7 @@ df_segs = df.Company.value_counts()[:10].reset_index().rename(columns=cols_segs)
 
 df_segs
 ```
-![](https://github.com/pyrataria/data_analytics/blob/analise_reclamacoes/resources/images/img01.png)
+![](https://github.com/pyrataria/data_analytics/blob/main/analise_reclamacoes/resources/images/img01.png)
 
 A informação obtida desta operação pode ser visualizada para um melhor entendimento. Um gráfico aceitável para tal, que demonstra de forma objetiva o percentual de ocorrências das reclamações.
 
@@ -163,7 +164,7 @@ graf_segs.update_layout(font_size=12, showlegend=False,
                                           x=0.5, y=0.5, font_size=14,
                                           showarrow=False)])
 ```
-![](https://github.com/pyrataria/data_analytics/blob/analise_reclamacoes/resources/images/graf_segs.png)
+![](https://github.com/pyrataria/data_analytics/blob/main/analise_reclamacoes/resources/images/graf_segs.png)
 
 Com isso, se observa uma grande discrepância acerca das reclamções. A seguradora *Anthem Health Plans, Inc* possui um percentual elevado de reclamações, se comparado as demais, alcançando cerca de 40,1% dos dados, isso equivale a 6519 dos 16238 registros.  
 ### Motivo ou causa de reclamação
@@ -178,7 +179,7 @@ df_recls = df.Reason.value_counts().reset_index().rename(columns=cols_recls)
 
 df_recls
 ```
-![](https://github.com/pyrataria/data_analytics/blob/analise_reclamacoes/resources/images/img02.png)
+![](https://github.com/pyrataria/data_analytics/blob/main/analise_reclamacoes/resources/images/img02.png)
 
 Os motivos ou causas de reclamação são: Claim Handling (Manuseio de Reclamações), PolicyHolder Service (Atendimento ao Titular da Apólice), Underwriting (Subscrição) e Marketing & Sales (Marketing & Vendas). Dentre elas, a predominante é *Claim Handling*. A visualização desstas frequências pode ser feita, de modo a facilitar o entendimento dos dados, a partir de um gráfico de barras.
 
@@ -198,7 +199,7 @@ graf_reason.update_xaxes(showline=True, linewidth=1, linecolor="lightgrey",
 graf_reason.update_yaxes(showline=True, linewidth=1, linecolor="lightgrey",
                          title=None, categoryorder="total descending")
 ```
-![](https://github.com/pyrataria/data_analytics/blob/analise_reclamacoes/resources/images/graf_reason.png)
+![](https://github.com/pyrataria/data_analytics/blob/main/analise_reclamacoes/resources/images/graf_reason.png)
 
 Observando a distribuição, fica evidente a discrepância acerca do principal motivo ou causa de reclamação, em relação aos demais. Além disso, é possível se ver as principais sub-reclamações, para se ter um entendimento maior sobre a variável *Reason*, encontrada na variável *SubReason*.  
 <u>**Manuseio de Reclamações (Claim Handling)**</u>  
@@ -207,11 +208,11 @@ Observando a distribuição, fica evidente a discrepância acerca do principal m
 ```python
 df[df.Reason == "Claim Handling"].SubReason.value_counts()[:5]
 ```
-> Claim Denial nbsp                       4501
-> Claim Delay nbsp                        3837
-> Unsatisfactory Settlement/Offer nbsp    3250
-> Claim Procedure nbsp                    1701
-> Medical Necessity Denial nbsp           1307
+> Claim Denial                       4501  
+> Claim Delay                        3837  
+> Unsatisfactory Settlement/Offer    3250  
+> Claim Procedure                    1701  
+> Medical Necessity Denial           1307  
 Name: SubReason, dtype: int64
 
 <u>**Atendimento ao Titular da Apólice (PolicyHolder Service)**</u>  
@@ -220,11 +221,11 @@ Engloba todos os aspectos de comunicação e assistência fornecidos aos cliente
 ```python
 df[df.Reason == "PolicyHolder Service"].SubReason.value_counts()[:5]
 ```
-> Premium Notice/Billing nbsp              1012
-> Delays/No Response nbsp                   712
-> Unsatisfactory Refund of Premium nbsp     432
-> Premium/Notice nbsp                       312
-> Premium Refund Delay nbsp                 159
+> Premium Notice/Billing              1012  
+> Delays/No Response                   712  
+> Unsatisfactory Refund of Premium     432  
+> Premium/Notice                       312  
+> Premium Refund Delay                 159  
 > Name: SubReason, dtype: int64
 
 <u>**Subscrição (Underwriting)**</u>  
@@ -233,11 +234,11 @@ Processo pelo qual a seguradora avalia o risco de cobrir um cliente em potencial
 ```python
 df[df.Reason == "Underwriting"].SubReason.value_counts()[:5]
 ```
-> Premium & Rating nbsp         1544
-> Cancellation nbsp              669
-> Nonrenewal nbsp                496
-> Premium/Rate Increase nbsp     288
-> No Subreason nbsp              153
+> Premium & Rating         1544  
+> Cancellation              669  
+> Nonrenewal                496  
+> Premium/Rate Increase     288  
+> No Subreason              153  
 > Name: SubReason, dtype: int64
 
 <u>**Marketing & Vendas (Marketing & Sales)**</u>  
@@ -246,11 +247,11 @@ Responsável por promover os produtos e serviços da seguradora, bem como atrair
 ```python
 df[df.Reason == "Marketing & Sales"].SubReason.value_counts()[:5]
 ```
-> High Pressure Tactics nbsp          241
-> Misrepresentation nbsp              185
-> Misappropriation of Premium nbsp    163
-> No Coverage/Premium Paid nbsp       144
-> Misleading Advertising nbsp          71
+> High Pressure Tactics          241  
+> Misrepresentation              185  
+> Misappropriation of Premium    163  
+> No Coverage/Premium Paid       144  
+> Misleading Advertising          71  
 > Name: SubReason, dtype: int64
 
 ### Cobertura de seguro x Motivo de reclamação
@@ -284,7 +285,7 @@ graf_cob_seg.update_xaxes(showline=True, linewidth=1, linecolor="lightgrey",
 graf_cob_seg.update_yaxes(showline=True, linewidth=1, linecolor="lightgrey",
                           title="Quantidade")
 ```
-![](https://github.com/pyrataria/data_analytics/blob/analise_reclamacoes/resources/images/graf_cob_seg.png)
+![](https://github.com/pyrataria/data_analytics/blob/main/analise_reclamacoes/resources/images/graf_cob_seg.png)
 
 Com isso, se constata que os tipos de coberturas de seguros mais solicitados, tem como principal motivo ou causa de reclamação a "Claim Handling", com excessão de *Individual Life*, que tem PolicyHolder Service como principal motivo ou causa de reclamação.
 ### Reclamações por dia
@@ -312,7 +313,7 @@ fig_recs_dia.update_yaxes(showline=True, linewidth=1, linecolor="lightgrey")
 fig_recs_dia.update_xaxes(showline=True, linewidth=1, linecolor="lightgrey",
                           rangeslider_visible=True)
 ```
-![](https://github.com/pyrataria/data_analytics/blob/analise_reclamacoes/resources/images/fig_recs_dia.png)
+![](https://github.com/pyrataria/data_analytics/blob/main/analise_reclamacoes/resources/images/fig_recs_dia.png)
 
 Olhando para o gráfico, é possível ver um aumento exponencial a partir de novembro de 2021. Além disso, se nota que, até o dia 31 de outubro de 2017, há poucos registros de reclamações.
 
