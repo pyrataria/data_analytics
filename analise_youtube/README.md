@@ -480,7 +480,7 @@ plt.figure(figsize=(10, 7))
 plt.imshow(wordcloud, interpolation="bilinear")
 plt.axis("off"); # Remove os eixos
 ```
-![](https://github.com/pyrataria/data_analytics/blob/main/analise_youtube/resources/images/graf_vis_pais.png)
+![](https://github.com/pyrataria/data_analytics/blob/main/analise_youtube/resources/images/wordcloud.png)
 
 Esta é uma bela visualização sobre os Youtubers mais relevantes do mundo, contudo, é possível fazer a mesma de maneira estatística, com um gráfico de barras.
 
