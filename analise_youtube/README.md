@@ -38,7 +38,7 @@ df = pd.read_csv("/content/drive/MyDrive/programacao/datasets/estatistica_global
 
 df.head()
 ```
-![](https://github.com/pyrataria/data_analytics/blob/main/analise_youtube/resources/images/img00.png)
+![](https://github.com/pyrataria/data_analytics/blob/main/analise_youtube/resources/images/df.png)
 
 Primeiramente, se faz necessário saber o número de registros e variáveis no dataset.
 
