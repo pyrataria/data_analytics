@@ -8,7 +8,7 @@ Os projetos aqui apresentados são frutos de meus estudos sobre **Análise de Da
 
 ### Estudos disponíveis
 1. **Preço da Gasolina Amapaense**
-   - [Repositório no Github](https://github.com/pyrataria/data_analytics/blob/main/preco_gasolina2022)
+   - [Repositório no Github](https://github.com/pyrataria/data_analytics/blob/main/preco_gasolina_ap2022)
    - [Notebook no Kaggle](https://www.kaggle.com/code/adelinoalmeida/preco-gasolina-ap2022)
 2. **E-commerce Amazon**
    - [Repositório no Github](https://github.com/pyrataria/data_analytics/blob/main/ecommerce_amazon)
