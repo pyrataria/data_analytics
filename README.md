@@ -1,13 +1,21 @@
-# Objetivo
-Este respositório tem por meta demonstrar estudos estatísticos, através de vizualização gráfica, inferência e descrição estatística, algoritmos de machine learning etc.
-# Sobre os Projetos
-Os projetos aqui apresentados, são frutos de meu aprendizado em **Análise de Dados**. Porém, os mesmos serão produzidos debaixo de muita dedicação, seja de tempo ou esforço.
-# Projetos
-## Estatística Descritiva
-* **Enem 2021 - Amapá**: [Github](https://github.com/pyrataria/data_analytics/blob/main/enem_2021_ap) | [Kaggle](https://www.kaggle.com/code/adelinoalmeida/enem-2021-ap)
-* **Preço da Gasolina 2022**: [Github](https://github.com/pyrataria/data_analytics/blob/main/preco_gasolina2022) | [Kaggle](https://www.kaggle.com/code/adelinoalmeida/preco-gasolina-etanol2022)
-* **E-commerce Amazon**: [Github](https://github.com/pyrataria/data_analytics/blob/main/ecommerce_amazon) | [Kaggle](https://www.kaggle.com/code/adelinoalmeida/ecommerce-amazon)
-* **Louças sujas**: [Github](https://github.com/pyrataria/data_analytics/blob/main/loucas_sujas) | [Kaggle](https://www.kaggle.com/code/adelinoalmeida/loucas-sujas)
-* **Análise Musical - Spotify**: [Github](https://github.com/pyrataria/data_analytics/blob/main/spotipy) | [Kaggle](https://www.kaggle.com/code/adelinoalmeida/spotipy)
-* **Análise de Reclamações**: [Github](https://github.com/pyrataria/data_analytics/blob/main/analise_reclamacoes) | [Kaggle](https://www.kaggle.com/code/adelinoalmeida/analise-reclamacoes)
-* **Análise do Youtube**: [Github](https://github.com/pyrataria/data_analytics/blob/main/analise_youtube) | [Kaggle](https://www.kaggle.com/code/adelinoalmeida/analise-youtube)
+<h1 align="center"> PROJETOS DE ANÁLISE DE DADOS </h1>
+
+## Objetivo
+Este respositório tem por finalidade demonstrar estudos estatísticos através de probabilidade, descrição e inferência estatística.
+
+## Sobre os projetos
+Os projetos aqui apresentados são frutos de meus estudos sobre **Análise de Dados**.
+
+### Estudos disponíveis
+1. **Preço da Gasolina Amapaense**
+   - [Repositório no Github](https://github.com/pyrataria/data_analytics/blob/main/preco_gasolina2022)
+   - [Notebook no Kaggle](https://www.kaggle.com/code/adelinoalmeida/preco-gasolina-ap2022)
+2. **E-commerce Amazon**
+   - [Repositório no Github](https://github.com/pyrataria/data_analytics/blob/main/ecommerce_amazon)
+   - [Notebook no Kaggle](https://www.kaggle.com/code/adelinoalmeida/ecommerce-amazon)
+3. **Análise Musical - Spotify**
+   - [Repositório no Github](https://github.com/pyrataria/data_analytics/blob/main/spotipy)
+   - [Notebook no Kaggle](https://www.kaggle.com/code/adelinoalmeida/analise-spotify)
+4. **Análise de Reclamações**
+   - [Repositório no Github](https://github.com/pyrataria/data_analytics/blob/main/analise_reclamacoes)
+   - [Notebook no Kaggle](https://www.kaggle.com/code/adelinoalmeida/analise-reclamacoes)
