@@ -7,6 +7,6 @@ Este respositório tem por finalidade demonstrar estudos estatísticos através 
 Os projetos aqui apresentados são frutos de meus estudos sobre **Análise de Dados**.
 
 ### Estudos disponíveis
-1. **Preço da Gasolina Amapaense**
-   - [Repositório no Github](https://github.com/pyrataria/data_analytics/blob/main/preco_gasolina_ap2022)
-   - [Notebook no Kaggle](https://www.kaggle.com/code/adelinoalmeida/preco-gasolina-ap2022)
+1. **Notas do ENEM 2023 - Amapá**
+   - [Repositório no Github](https://github.com/pyrataria/data_analytics/blob/main/notas_enem_ap2023)
+   - [Notebook no Kaggle](https://www.kaggle.com/code/adelinoalmeida/notas-enem-ap2023)
