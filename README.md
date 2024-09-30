@@ -4,7 +4,7 @@
 Este respositório tem por finalidade demonstrar estudos estatísticos através de probabilidade, descrição e inferência estatística.
 
 ## Sobre os projetos
-Os projetos aqui apresentados são frutos de meus estudos sobre **Análise de Dados**.
+Os projetos aqui apresentados são frutos de meus estudos sobre Análise de Dados.
 
 ### Estudos disponíveis
 1. **Notas do ENEM 2023 - Amapá**
