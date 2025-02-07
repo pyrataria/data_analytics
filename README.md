@@ -14,3 +14,7 @@ Os projetos aqui apresentados são frutos de meus estudos sobre Análise de Dado
 2. **Consumo de energia**
    - [Repositório no Github](https://github.com/pyrataria/data_analytics/blob/main/energy_consumption/energy_consumption.ipynb)
    - [Notebook no Kaggle](https://www.kaggle.com/code/adelinoalmeida/energyConsumption)
+
+3. **Detecção de diabetes**
+   - [Repositório no Github](https://github.com/pyrataria/data_analytics/blob/main/diabetes/diabetes.ipynb)
+   - [Notebook no Kaggle](https://www.kaggle.com/code/adelinoalmeida/diabetes)
