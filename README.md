@@ -1,10 +1,10 @@
 <h1 align="center"><strong>PROJETOS DE ANÁLISE DE DADOS</strong></h1>
 
 ## Objetivo
-Este respositório tem por finalidade demonstrar estudos estatísticos através de probabilidade, descrição e inferência estatística.
+Este respositório tem por finalidade demonstrar estudos estatísticos através de probabilidade, descrição e inferência estatística, etc.
 
-## Sobre os projetos
-Os projetos aqui apresentados são frutos de meus estudos sobre Análise de Dados.
+## Sobre
+Os projetos aqui apresentados são frutos de meus estudos na área de Análise de Dados.
 
 ### Estudos disponíveis
 1. **Notas do ENEM 2023 - Amapá**
