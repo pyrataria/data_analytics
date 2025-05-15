@@ -18,3 +18,7 @@ Os projetos aqui apresentados são frutos de meus estudos sobre Análise de Dado
 3. **Detecção de diabetes**
    - [Repositório no Github](https://github.com/pyrataria/data_analytics/blob/main/diabetes/diabetes.ipynb)
    - [Notebook no Kaggle](https://www.kaggle.com/code/adelinoalmeida/diabetes)
+
+4. **Cultivo mais adequado**
+   - [Repositório no Github](https://github.com/pyrataria/data_analytics/blob/main/crop_recommendation/crop_recommendation.ipynb)
+   - [Notebook no Kaggle](https://www.kaggle.com/code/adelinoalmeida/crop_recommendation)
