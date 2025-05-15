@@ -21,4 +21,4 @@ Os projetos aqui apresentados são frutos de meus estudos na área de Análise d
 
 4. **Cultivo mais adequado**
    - [Repositório no Github](https://github.com/pyrataria/data_analytics/blob/main/crop_recommendation/crop_recommendation.ipynb)
-   - [Notebook no Kaggle](https://www.kaggle.com/code/adelinoalmeida/crop_recommendation)
+   - [Notebook no Kaggle](https://www.kaggle.com/code/adelinoalmeida/crop-recommendation)
