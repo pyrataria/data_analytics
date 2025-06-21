@@ -1,0 +1,5 @@
+# ignora todos os .tmp.driveupload
+*.tmp.driveupload
+
+# ignora toda a pasta OneDrive (se estiver dentro do repositório)
+OneDrive/
