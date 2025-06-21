@@ -34,7 +34,7 @@ def load_data(path=DATA_PATH):
 df = load_data()
 
 # Sidebar filters
-st.sidebar.header("🔍 Filtros")
+st.sidebar.header("Filtros")
 job_title = st.sidebar.selectbox(
     "Título da Vaga", ["Todas"] + sorted(df['job_title'].unique().tolist())
 )
@@ -90,7 +90,7 @@ with tab1:
     # limitando a largura e centralizando o conteúdo.
     map_col1, map_col2, map_col3 = st.columns([0.1, 0.8, 0.1])
     with map_col2:
-        st.subheader("🌍 Choropleth de Salário Médio por País")
+        st.subheader("Choropleth de Salário Médio por País")
         fig = px.choropleth(
             salary_by_country,
             locations='country',
@@ -114,7 +114,7 @@ with tab1:
     # Aplicamos a mesma técnica de colunas para este gráfico.
     top_countries_col1, top_countries_col2, top_countries_col3 = st.columns([0.2, 0.6, 0.2])
     with top_countries_col2:
-        st.subheader("🏆 Top Países por Salário Médio")
+        st.subheader("Top Países por Salário Médio")
         top10 = salary_by_country.nlargest(10, 'avg_salary')
         fig_top10 = px.bar(
             top10, x='country', y='avg_salary', orientation='v',
@@ -128,7 +128,7 @@ with tab1:
 
 with tab2:
     # Esta aba já tem um bom layout com 2 colunas, então não precisa de grandes mudanças.
-    st.subheader("📊 Distribuições")
+    st.subheader("Distribuições")
     c1, c2 = st.columns(2)
     with c1:
         st.write("**Salário por Nível de Experiência**")
@@ -159,7 +159,7 @@ with tab3:
 
     skills_col1, skills_col2, skills_col3 = st.columns([0.2, 0.6, 0.2])
     with skills_col2:
-        st.subheader("🔧 Top Skills Requeridas")
+        st.subheader("Top Skills Requeridas")
         top_skills = skills_counts.nlargest(10).reset_index()
         top_skills.columns = ['skill', 'count']
         fig_sk = px.bar(
@@ -172,9 +172,9 @@ with tab3:
 
     st.divider()
 
-    cloud_col1, cloud_col2, cloud_col3 = st.columns([0.1, 0.8, 0.1])
+    cloud_col1, cloud_col2, cloud_col3 = st.columns([0.2, 0.6, 0.2])
     with cloud_col2:
-        st.subheader("🛠️ Nuvem de Skills Requeridas")
+        st.subheader("Nuvem de Skills Requeridas")
         # Gerando nuvem apenas se houver skills para evitar erro
         if not skills_counts.empty:
             wc = WordCloud(
