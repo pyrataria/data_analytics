@@ -3,7 +3,6 @@ import plotly.express as px
 import plotly.io as pio
 import streamlit as st
 import pandas as pd
-import os
 
 
 st.set_page_config(layout="wide")
@@ -20,16 +19,18 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-pio.templates.default = "plotly_dark"
+
 # Constants
-# monta o caminho completo sempre relativo ao app.py
-HERE = os.path.dirname(__file__)
-DATA_PATH = os.path.join(HERE, "ai_job_dataset.csv")
+DATA_PATH = 'ai_job_dataset.csv'
+
+pio.templates.default = "plotly_dark"
 
 @st.cache_data
 def load_data(path=DATA_PATH):
-    return pd.read_csv(path, parse_dates=['posting_date', 'application_deadline'])
+    df = pd.read_csv(path, parse_dates=['posting_date', 'application_deadline'])
+    return df
 
+# Load dataset
 df = load_data()
 
 # Sidebar filters
