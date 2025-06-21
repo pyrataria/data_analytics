@@ -2,4 +2,3 @@ wordcloud
 streamlit
 pandas
 plotly
-os
