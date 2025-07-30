@@ -28,5 +28,5 @@ Os projetos aqui apresentados são frutos de meus estudos na área de Análise d
    - [Notebook no Kaggle](https://www.kaggle.com/code/adelinoalmeida/ai-jobs)
 
 6. **Vibe Spotify**
-   - [Repositório no Github](https://github.com/pyrataria/data_analytics/blob/main/ai_job/spotipy.ipynb)
+   - [Repositório no Github](https://github.com/pyrataria/data_analytics/blob/main/spotipy/spotipy.ipynb)
    - [Notebook no Kaggle](https://www.kaggle.com/code/adelinoalmeida/spotipy)
